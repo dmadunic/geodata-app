@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="0001-20201002" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="001-mauritius.png"/>
+            <where>CODE_A_3='MUS'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="002-cyprus.png"/>
+            <where>CODE_A_3='CYP'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="003-austria.png"/>
+            <where>CODE_A_3='AUT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="004-oman.png"/>
+            <where>CODE_A_3='OMN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="005-ethiopia.png"/>
+            <where>CODE_A_3='ETH'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="006-tanzania.png"/>
+            <where>CODE_A_3='TZA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="007-nicaragua.png"/>
+            <where>CODE_A_3='NIC'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="008-estonia.png"/>
+            <where>CODE_A_3='EST'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="009-uganda.png"/>
+            <where>CODE_A_3='UGA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="010-slovenia.png"/>
+            <where>CODE_A_3='SVN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="011-zimbabwe.png"/>
+            <where>CODE_A_3='ZWE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="012-sao-tome-and-prince.png"/>
+            <where>CODE_A_3='STP'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="013-italy.png"/>
+            <where>CODE_A_3='ITA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="015-el-salvador.png"/>
+            <where>CODE_A_3='SLV'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="016-nepal.png"/>
+            <where>CODE_A_3='NPL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="017-christmas-island.png"/>
+            <where>CODE_A_3='CXR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="018-lebanon.png"/>
+            <where>CODE_A_3='LBN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="020-iraq.png"/>
+            <where>CODE_A_3='IRQ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="021-cook-islands.png"/>
+            <where>CODE_A_3='COK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="022-syria.png"/>
+            <where>CODE_A_3='SYR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="023-cocos-island.png"/>
+            <where>CODE_A_3='CCK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="024-honduras.png"/>
+            <where>CODE_A_3='HND'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="025-anguilla.png"/>
+            <where>CODE_A_3='AIA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="027-american-samoa.png"/>
+            <where>CODE_A_3='ASM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="028-puerto-rico.png"/>
+            <where>CODE_A_3='PRI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="029-comoros.png"/>
+            <where>CODE_A_3='COM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="030-north-korea.png"/>
+            <where>CODE_A_3='PRK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="032-zambia.png"/>
+            <where>CODE_A_3='ZMB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="033-saint-kitts-and-nevis.png"/>
+            <where>CODE_A_3='KNA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="034-china.png"/>
+            <where>CODE_A_3='CHN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="035-luxembourg.png"/>
+            <where>CODE_A_3='LUX'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="036-central-african-republic.png"/>
+            <where>CODE_A_3='CAF'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="037-jamaica.png"/>
+            <where>CODE_A_3='JAM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="038-cape-verde.png"/>
+            <where>CODE_A_3='CPV'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="039-monaco.png"/>
+            <where>CODE_A_3='MCO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="040-bhutan.png"/>
+            <where>CODE_A_3='BTN'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="0002-20201002" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="041-paraguay.png"/>
+            <where>CODE_A_3='PRY'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="042-aruba.png"/>
+            <where>CODE_A_3='ABW'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="043-montserrat.png"/>
+            <where>CODE_A_3='MSR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="044-latvia.png"/>
+            <where>CODE_A_3='LVA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="045-andorra.png"/>
+            <where>CODE_A_3='AND'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="046-micronesia.png"/>
+            <where>CODE_A_3='FSM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="047-dominican-republic.png"/>
+            <where>CODE_A_3='DOM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="049-tunisia.png"/>
+            <where>CODE_A_3='TUN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="050-mauritania.png"/>
+            <where>CODE_A_3='MRT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="051-cayman-islands.png"/>
+            <where>CODE_A_3='CYM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="053-ghana.png"/>
+            <where>CODE_A_3='GHA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="056-guinea-bissau.png"/>
+            <where>CODE_A_3='GNB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="057-burundi.png"/>
+            <where>CODE_A_3='BDI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="058-myanmar.png"/>
+            <where>CODE_A_3='MMR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="059-gabon.png"/>
+            <where>CODE_A_3='GAB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="060-benin.png"/>
+            <where>CODE_A_3='BEN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="062-namibia.png"/>
+            <where>CODE_A_3='NAM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="063-japan.png"/>
+            <where>CODE_A_3='JPN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="064-lithuania.png"/>
+            <where>CODE_A_3='LTU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="065-eritrea.png"/>
+            <where>CODE_A_3='ERI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="066-chad.png"/>
+            <where>CODE_A_3='TCD'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="067-kenya.png"/>
+            <where>CODE_A_3='KEN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="068-djibouti.png"/>
+            <where>CODE_A_3='DJI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="069-british-indian-ocean-territory.png"/>
+            <where>CODE_A_3='IOT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="070-tuvalu-1.png"/>
+            <where>CODE_A_3='TUV'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="071-serbia.png"/>
+            <where>CODE_A_3='SRB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="072-bonaire.png"/>
+            <where>CODE_A_3='BES'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="073-togo.png"/>
+            <where>CODE_A_3='TGO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="074-kazakhstan.png"/>
+            <where>CODE_A_3='KAZ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="075-antigua-and-barbuda.png"/>
+            <where>CODE_A_3='ATG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="076-suriname.png"/>
+            <where>CODE_A_3='SUR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="077-jordan.png"/>
+            <where>CODE_A_3='JOR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="078-belize.png"/>
+            <where>CODE_A_3='BLZ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="080-iceland.png"/>
+            <where>CODE_A_3='ISL'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="0003-20201002" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="081-bermuda.png"/>
+            <where>CODE_A_3='BMU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="083-somalia.png"/>
+            <where>CODE_A_3='SOM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="084-barbados.png"/>
+            <where>CODE_A_3='BRB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="085-solomon-islands.png"/>
+            <where>CODE_A_3='SLB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="086-nigeria.png"/>
+            <where>CODE_A_3='NGA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="087-aland-islands.png"/>
+            <where>CODE_A_3='ALA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="088-uruguay.png"/>
+            <where>CODE_A_3='URY'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="089-sint-maarten.png"/>
+            <where>CODE_A_3='SXM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="090-burkina-faso.png"/>
+            <where>CODE_A_3='BFA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="091-slovakia.png"/>
+            <where>CODE_A_3='SVK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="092-sierra-leone.png"/>
+            <where>CODE_A_3='SLE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="094-south-korea.png"/>
+            <where>CODE_A_3='KOR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="095-pitcairn-islands.png"/>
+            <where>CODE_A_3='PCN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="096-mozambique.png"/>
+            <where>CODE_A_3='MOZ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="097-san-marino.png"/>
+            <where>CODE_A_3='SMR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="098-guatemala.png"/>
+            <where>CODE_A_3='GTM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="099-albania.png"/>
+            <where>CODE_A_3='ALB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="100-pakistan.png"/>
+            <where>CODE_A_3='PAK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="103-marshall-island.png"/>
+            <where>CODE_A_3='MHL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="104-ecuador.png"/>
+            <where>CODE_A_3='ECU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="105-cameroon.png"/>
+            <where>CODE_A_3='CMR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="106-panama.png"/>
+            <where>CODE_A_3='PAN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="107-kwait.png"/>
+            <where>CODE_A_3='KWT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="108-armenia.png"/>
+            <where>CODE_A_3='ARM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="109-romania.png"/>
+            <where>CODE_A_3='ROU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="110-guinea.png"/>
+            <where>CODE_A_3='GIN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="111-afghanistan.png"/>
+            <where>CODE_A_3='AFG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="113-greenland.png"/>
+            <where>CODE_A_3='GRL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="114-british-virgin-islands.png"/>
+            <where>CODE_A_3='VGB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="115-hungary.png"/>
+            <where>CODE_A_3='HUN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="117-angola.png"/>
+            <where>CODE_A_3='AGO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="118-malasya.png"/>
+            <where>CODE_A_3='MYS'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="119-brunei.png"/>
+            <where>CODE_A_3='BRN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="120-bahamas.png"/>
+            <where>CODE_A_3='BHS'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="0004-20201002" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="121-new-zealand.png"/>
+            <where>CODE_A_3='NZL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="122-faroe-islands.png"/>
+            <where>CODE_A_3='FRO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="124-vatican-city.png"/>
+            <where>CODE_A_3='VAT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="125-finland.png"/>
+            <where>CODE_A_3='FIN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="126-botswana.png"/>
+            <where>CODE_A_3='BWA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="127-sri-lanka.png"/>
+            <where>CODE_A_3='LKA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="128-spain.png"/>
+            <where>CODE_A_3='ESP'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="131-chile.png"/>
+            <where>CODE_A_3='CHL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="132-bosnia-and-herzegovina.png"/>
+            <where>CODE_A_3='BIH'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="133-saudi-arabia.png"/>
+            <where>CODE_A_3='SAU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="134-liechtenstein.png"/>
+            <where>CODE_A_3='LIE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="135-belarus.png"/>
+            <where>CODE_A_3='BLR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="136-iran.png"/>
+            <where>CODE_A_3='IRN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="137-fiji.png"/>
+            <where>CODE_A_3='FJI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="138-bahrain.png"/>
+            <where>CODE_A_3='BHR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="139-venezuela.png"/>
+            <where>CODE_A_3='VEN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="140-east-timor.png"/>
+            <where>CODE_A_3='TLS'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="141-azerbaijan.png"/>
+            <where>CODE_A_3='AZE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="142-tibet.png"/>
+            <where>CODE_A_3='AZE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="143-norway.png"/>
+            <where>CODE_A_3='NOR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="144-algeria.png"/>
+            <where>CODE_A_3='DZA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="145-ukraine.png"/>
+            <where>CODE_A_3='UKR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="146-gambia.png"/>
+            <where>CODE_A_3='GMB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="147-bangladesh.png"/>
+            <where>CODE_A_3='BGD'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="149-czech-republic.png"/>
+            <where>CODE_A_3='CZE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="150-bolivia.png"/>
+            <where>CODE_A_3='BOL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="151-united-arab-emirates.png"/>
+            <where>CODE_A_3='ARE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="152-kyrgyzstan.png"/>
+            <where>CODE_A_3='KGZ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="153-cuba.png"/>
+            <where>CODE_A_3='CUB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="154-swaziland.png"/>
+            <where>CODE_A_3='SWZ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="155-israel.png"/>
+            <where>CODE_A_3='ISR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="156-costa-rica.png"/>
+            <where>CODE_A_3='CRI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="157-republic-of-the-congo.png"/>
+            <where>CODE_A_3='COG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="158-egypt.png"/>
+            <where>CODE_A_3='EGY'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="159-cambodia.png"/>
+            <where>CODE_A_3='KHM'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="0005-20201002" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="161-ivory-coast.png"/>
+            <where>CODE_A_3='CIV'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="162-germany.png"/>
+            <where>CODE_A_3='DEU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="163-papua-new-guinea.png"/>
+            <where>CODE_A_3='PNG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="164-croatia.png"/>
+            <where>CODE_A_3='HRV'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="165-belgium.png"/>
+            <where>CODE_A_3='BEL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="166-morocco.png"/>
+            <where>CODE_A_3='MAR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="167-macao.png"/>
+            <where>CODE_A_3='MAC'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="168-bulgaria.png"/>
+            <where>CODE_A_3='BGR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="169-liberia.png"/>
+            <where>CODE_A_3='LBR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="170-greece.png"/>
+            <where>CODE_A_3='GRC'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="172-st-lucia.png"/>
+            <where>CODE_A_3='LCA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="173-mali.png"/>
+            <where>CODE_A_3='MLI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="174-denmark.png"/>
+            <where>CODE_A_3='DNK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="176-lesotho.png"/>
+            <where>CODE_A_3='LSO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="177-colombia.png"/>
+            <where>CODE_A_3='COL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="178-palau.png"/>
+            <where>CODE_A_3='PLW'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="179-ireland.png"/>
+            <where>CODE_A_3='IRL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="180-french-polynesia.png"/>
+            <where>CODE_A_3='PYF'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="181-trinidad-and-tobago.png"/>
+            <where>CODE_A_3='TTO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="182-niue.png"/>
+            <where>CODE_A_3='NIU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="183-hong-kong.png"/>
+            <where>CODE_A_3='HKG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="184-sweden.png"/>
+            <where>CODE_A_3='SWE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="185-haiti.png"/>
+            <where>CODE_A_3='HTI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="186-dominica.png"/>
+            <where>CODE_A_3='DMA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="187-vanuatu.png"/>
+            <where>CODE_A_3='VUT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="188-peru.png"/>
+            <where>CODE_A_3='PER'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="189-equatorial-guinea.png"/>
+            <where>CODE_A_3='GNQ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="190-uzbekistn.png"/>
+            <where>CODE_A_3='UZB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="191-tonga.png"/>
+            <where>CODE_A_3='TON'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="192-philippines.png"/>
+            <where>CODE_A_3='PHL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="193-norfolk-island.png"/>
+            <where>CODE_A_3='NFK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="194-malta.png"/>
+            <where>CODE_A_3='MLT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='FRA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="196-tajikistan.png"/>
+            <where>CODE_A_3='TJK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="198-argentina.png"/>
+            <where>CODE_A_3='ARG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="199-sudan.png"/>
+            <where>CODE_A_3='SDN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="200-south-africa.png"/>
+            <where>CODE_A_3='ZAF'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="0006-20201002" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="201-martinique.png"/>
+            <where>CODE_A_3='MTQ'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="202-taiwan.png"/>
+            <where>CODE_A_3='TWN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="204-guernsey.png"/>
+            <where>CODE_A_3='GGY'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="205-switzerland.png"/>
+            <where>CODE_A_3='CHE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="206-rwanda.png"/>
+            <where>CODE_A_3='RWA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="207-guam.png"/>
+            <where>CODE_A_3='GUM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="208-palestine.png"/>
+            <where>CODE_A_3='PSE'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="209-indonesia.png"/>
+            <where>CODE_A_3='IDN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="210-grenada.png"/>
+            <where>CODE_A_3='GRD'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="211-poland.png"/>
+            <where>CODE_A_3='POL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="212-moldova.png"/>
+            <where>CODE_A_3='MDA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="213-gibraltar.png"/>
+            <where>CODE_A_3='GIB'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="214-malawi.png"/>
+            <where>CODE_A_3='MWI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="215-falkland-islands.png"/>
+            <where>CODE_A_3='FLK'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="217-virgin-islands.png"/>
+            <where>CODE_A_3='VIR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="218-turkey.png"/>
+            <where>CODE_A_3='TUR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="219-isle-of-man.png"/>
+            <where>CODE_A_3='IMN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="220-vietnam.png"/>
+            <where>CODE_A_3='VNM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="221-tuvalu.png"/>
+            <where>CODE_A_3='TUV'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="222-niger.png"/>
+            <where>CODE_A_3='NER'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="223-turks-and-caicos.png"/>
+            <where>CODE_A_3='TCA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="224-portugal.png"/>
+            <where>CODE_A_3='PRT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="225-maldives.png"/>
+            <where>CODE_A_3='MDV'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="227-senegal.png"/>
+            <where>CODE_A_3='SEN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="228-nauru.png"/>
+            <where>CODE_A_3='NRU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="229-turkmenistan.png"/>
+            <where>CODE_A_3='TKM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="230-singapore.png"/>
+            <where>CODE_A_3='SGP'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="231-libya.png"/>
+            <where>CODE_A_3='LBY'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="232-yemen.png"/>
+            <where>CODE_A_3='YEM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="234-australia.png"/>
+            <where>CODE_A_3='AUS'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="235-tokelau.png"/>
+            <where>CODE_A_3='TKL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="236-republic-of-macedonia.png"/>
+            <where>CODE_A_3='MKD'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="237-netherlands.png"/>
+            <where>CODE_A_3='NLD'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="238-thailand.png"/>
+            <where>CODE_A_3='THA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="239-montenegro.png"/>
+            <where>CODE_A_3='MNE'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="0007-20201002" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="241-st-vincent-and-the-grenadines.png"/>
+            <where>CODE_A_3='VCT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="242-madagascar.png"/>
+            <where>CODE_A_3='MDG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="243-canada.png"/>
+            <where>CODE_A_3='CAN'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="244-south-sudan.png"/>
+            <where>CODE_A_3='SSD'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="245-jersey.png"/>
+            <where>CODE_A_3='JEY'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="246-india.png"/>
+            <where>CODE_A_3='IND'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="247-somaliland.png"/>
+            <where>CODE_A_3='SOM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="248-russia.png"/>
+            <where>CODE_A_3='RUS'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="249-democratic-republic-of-congo.png"/>
+            <where>CODE_A_3='COD'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="250-sint-eustatius.png"/>
+            <where>CODE_A_3='BES'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="251-samoa.png"/>
+            <where>CODE_A_3='WSM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="252-mexico.png"/>
+            <where>CODE_A_3='MEX'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="253-seychelles.png"/>
+            <where>CODE_A_3='SYC'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="255-brazil.png"/>
+            <where>CODE_A_3='BRA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="256-georgia.png"/>
+            <where>CODE_A_3='GEO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="258-mongolia.png"/>
+            <where>CODE_A_3='MNG'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="260-united-kingdom.png"/>
+            <where>CODE_A_3='GBR'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="261-kiribati.png"/>
+            <where>CODE_A_3='KIR'</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="0008-20201004" author="dmadunic" context="!test">
+        <update tableName="COUNTRY">
+            <column name="flag" value="143-norway.png"/>
+            <where>CODE_A_3='BVT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="116-curacao.png"/>
+            <where>CODE_A_3='CUW'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="112-laos.png"/>
+            <where>CODE_A_3='LAO'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='MYT'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='NCL'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="160-northern-marianas-islands.png"/>
+            <where>CODE_A_3='MNP'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='SPM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='REU'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='BLM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='SPM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="143-norway.png"/>
+            <where>CODE_A_3='SJM'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="000-united-states.png"/>
+            <where>CODE_A_3='USA'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="000-united-states.png"/>
+            <where>CODE_A_3='UMI'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="195-france.png"/>
+            <where>CODE_A_3='WLF'</where>
+        </update>
+        <update tableName="COUNTRY">
+            <column name="flag" value="263-qatar.png"/>
+            <where>CODE_A_3='QAT'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

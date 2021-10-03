@@ -1,0 +1,1498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="0001-20180809" author="dmadunic" context="!test">
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="248" />
+            <column name="CODE_A_2" value="AX" />
+            <column name="CODE_A_3" value="ALA" />
+            <column name="NAME" value="AALAND ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="004" />
+            <column name="CODE_A_2" value="AF" />
+            <column name="CODE_A_3" value="AFG" />
+            <column name="NAME" value="AFGHANISTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="008" />
+            <column name="CODE_A_2" value="AL" />
+            <column name="CODE_A_3" value="ALB" />
+            <column name="NAME" value="ALBANIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="012" />
+            <column name="CODE_A_2" value="DZ" />
+            <column name="CODE_A_3" value="DZA" />
+            <column name="NAME" value="ALGERIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="016" />
+            <column name="CODE_A_2" value="AS" />
+            <column name="CODE_A_3" value="ASM" />
+            <column name="NAME" value="AMERICAN SAMOA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="020" />
+            <column name="CODE_A_2" value="AD" />
+            <column name="CODE_A_3" value="AND" />
+            <column name="NAME" value="ANDORRA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="024" />
+            <column name="CODE_A_2" value="AO" />
+            <column name="CODE_A_3" value="AGO" />
+            <column name="NAME" value="ANGOLA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="660" />
+            <column name="CODE_A_2" value="AI" />
+            <column name="CODE_A_3" value="AIA" />
+            <column name="NAME" value="ANGUILLA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="010" />
+            <column name="CODE_A_2" value="AQ" />
+            <column name="CODE_A_3" value="ATA" />
+            <column name="NAME" value="ANTARCTICA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="028" />
+            <column name="CODE_A_2" value="AG" />
+            <column name="CODE_A_3" value="ATG" />
+            <column name="NAME" value="ANTIGUA AND BARBUDA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="032" />
+            <column name="CODE_A_2" value="AR" />
+            <column name="CODE_A_3" value="ARG" />
+            <column name="NAME" value="ARGENTINA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="051" />
+            <column name="CODE_A_2" value="AM" />
+            <column name="CODE_A_3" value="ARM" />
+            <column name="NAME" value="ARMENIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="553" />
+            <column name="CODE_A_2" value="AW" />
+            <column name="CODE_A_3" value="ABW" />
+            <column name="NAME" value="ARUBA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="036" />
+            <column name="CODE_A_2" value="AU" />
+            <column name="CODE_A_3" value="AUS" />
+            <column name="NAME" value="AUSTRALIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="040" />
+            <column name="CODE_A_2" value="AT" />
+            <column name="CODE_A_3" value="AUT" />
+            <column name="NAME" value="AUSTRIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="031" />
+            <column name="CODE_A_2" value="AZ" />
+            <column name="CODE_A_3" value="AZE" />
+            <column name="NAME" value="AZERBAIJAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="044" />
+            <column name="CODE_A_2" value="BS" />
+            <column name="CODE_A_3" value="BHS" />
+            <column name="NAME" value="BAHAMAS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="048" />
+            <column name="CODE_A_2" value="BH" />
+            <column name="CODE_A_3" value="BHR" />
+            <column name="NAME" value="BAHRAIN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="050" />
+            <column name="CODE_A_2" value="BD" />
+            <column name="CODE_A_3" value="BGD" />
+            <column name="NAME" value="BANGLADESH" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="052" />
+            <column name="CODE_A_2" value="BB" />
+            <column name="CODE_A_3" value="BRB" />
+            <column name="NAME" value="BARBADOS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="112" />
+            <column name="CODE_A_2" value="BY" />
+            <column name="CODE_A_3" value="BLR" />
+            <column name="NAME" value="BELARUS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="056" />
+            <column name="CODE_A_2" value="BE" />
+            <column name="CODE_A_3" value="BEL" />
+            <column name="NAME" value="BELGIUM" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="084" />
+            <column name="CODE_A_2" value="BZ" />
+            <column name="CODE_A_3" value="BLZ" />
+            <column name="NAME" value="BELIZE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="204" />
+            <column name="CODE_A_2" value="BJ" />
+            <column name="CODE_A_3" value="BEN" />
+            <column name="NAME" value="BENIN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="060" />
+            <column name="CODE_A_2" value="BM" />
+            <column name="CODE_A_3" value="BMU" />
+            <column name="NAME" value="BERMUDA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="064" />
+            <column name="CODE_A_2" value="BT" />
+            <column name="CODE_A_3" value="BTN" />
+            <column name="NAME" value="BHUTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="068" />
+            <column name="CODE_A_2" value="BO" />
+            <column name="CODE_A_3" value="BOL" />
+            <column name="NAME" value="BOLIVIA, PLURINATIONAL STATE OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="535" />
+            <column name="CODE_A_2" value="BQ" />
+            <column name="CODE_A_3" value="BES" />
+            <column name="NAME" value="BONAIRE, SINT EUSTATIUS AND SABA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="070" />
+            <column name="CODE_A_2" value="BA" />
+            <column name="CODE_A_3" value="BIH" />
+            <column name="NAME" value="BOSNIA AND HERZEGOVINA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="072" />
+            <column name="CODE_A_2" value="BW" />
+            <column name="CODE_A_3" value="BWA" />
+            <column name="NAME" value="BOTSWANA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="074" />
+            <column name="CODE_A_2" value="BV" />
+            <column name="CODE_A_3" value="BVT" />
+            <column name="NAME" value="BOUVET ISLAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="076" />
+            <column name="CODE_A_2" value="BR" />
+            <column name="CODE_A_3" value="BRA" />
+            <column name="NAME" value="BRAZIL" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="086" />
+            <column name="CODE_A_2" value="IO" />
+            <column name="CODE_A_3" value="IOT" />
+            <column name="NAME" value="BRITISH INDIAN OCEAN TERRITORY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="096" />
+            <column name="CODE_A_2" value="BN" />
+            <column name="CODE_A_3" value="BRN" />
+            <column name="NAME" value="BRUNEI DARUSSALAM" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="100" />
+            <column name="CODE_A_2" value="BG" />
+            <column name="CODE_A_3" value="BGR" />
+            <column name="NAME" value="BULGARIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="854" />
+            <column name="CODE_A_2" value="BF" />
+            <column name="CODE_A_3" value="BFA" />
+            <column name="NAME" value="BURKINA FASO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="108" />
+            <column name="CODE_A_2" value="BI" />
+            <column name="CODE_A_3" value="BDI" />
+            <column name="NAME" value="BURUNDI" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="116" />
+            <column name="CODE_A_2" value="KH" />
+            <column name="CODE_A_3" value="KHM" />
+            <column name="NAME" value="CAMBODIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="120" />
+            <column name="CODE_A_2" value="CM" />
+            <column name="CODE_A_3" value="CMR" />
+            <column name="NAME" value="CAMEROON" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="124" />
+            <column name="CODE_A_2" value="CA" />
+            <column name="CODE_A_3" value="CAN" />
+            <column name="NAME" value="CANADA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="132" />
+            <column name="CODE_A_2" value="CV" />
+            <column name="CODE_A_3" value="CPV" />
+            <column name="NAME" value="CAPE VERDE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="136" />
+            <column name="CODE_A_2" value="KY" />
+            <column name="CODE_A_3" value="CYM" />
+            <column name="NAME" value="CAYMAN ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="140" />
+            <column name="CODE_A_2" value="CF" />
+            <column name="CODE_A_3" value="CAF" />
+            <column name="NAME" value="CENTRAL AFRICAN REPUBLIC" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="148" />
+            <column name="CODE_A_2" value="TD" />
+            <column name="CODE_A_3" value="TCD" />
+            <column name="NAME" value="CHAD" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="152" />
+            <column name="CODE_A_2" value="CL" />
+            <column name="CODE_A_3" value="CHL" />
+            <column name="NAME" value="CHILE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="156" />
+            <column name="CODE_A_2" value="CN" />
+            <column name="CODE_A_3" value="CHN" />
+            <column name="NAME" value="CHINA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="162" />
+            <column name="CODE_A_2" value="CX" />
+            <column name="CODE_A_3" value="CXR" />
+            <column name="NAME" value="CHRISTMAS ISLAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="166" />
+            <column name="CODE_A_2" value="CC" />
+            <column name="CODE_A_3" value="CCK" />
+            <column name="NAME" value="COCOS (KEELING) ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="170" />
+            <column name="CODE_A_2" value="CO" />
+            <column name="CODE_A_3" value="COL" />
+            <column name="NAME" value="COLOMBIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="174" />
+            <column name="CODE_A_2" value="KM" />
+            <column name="CODE_A_3" value="COM" />
+            <column name="NAME" value="COMOROS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="178" />
+            <column name="CODE_A_2" value="CG" />
+            <column name="CODE_A_3" value="COG" />
+            <column name="NAME" value="CONGO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="180" />
+            <column name="CODE_A_2" value="CD" />
+            <column name="CODE_A_3" value="COD" />
+            <column name="NAME" value="CONGO, THE DEMOCRATIC REPUBLIC OF THE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="184" />
+            <column name="CODE_A_2" value="CK" />
+            <column name="CODE_A_3" value="COK" />
+            <column name="NAME" value="COOK ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="188" />
+            <column name="CODE_A_2" value="CR" />
+            <column name="CODE_A_3" value="CRI" />
+            <column name="NAME" value="COSTA RICA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="384" />
+            <column name="CODE_A_2" value="CI" />
+            <column name="CODE_A_3" value="CIV" />
+            <column name="NAME" value="COTE D'IVOIRE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="191" />
+            <column name="CODE_A_2" value="HR" />
+            <column name="CODE_A_3" value="HRV" />
+            <column name="NAME" value="CROATIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="192" />
+            <column name="CODE_A_2" value="CU" />
+            <column name="CODE_A_3" value="CUB" />
+            <column name="NAME" value="CUBA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="531" />
+            <column name="CODE_A_2" value="CW" />
+            <column name="CODE_A_3" value="CUW" />
+            <column name="NAME" value="CURAÇAO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="196" />
+            <column name="CODE_A_2" value="CY" />
+            <column name="CODE_A_3" value="CYP" />
+            <column name="NAME" value="CYPRUS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="203" />
+            <column name="CODE_A_2" value="CZ" />
+            <column name="CODE_A_3" value="CZE" />
+            <column name="NAME" value="CZECH REPUBLIC" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="208" />
+            <column name="CODE_A_2" value="DK" />
+            <column name="CODE_A_3" value="DNK" />
+            <column name="NAME" value="DENMARK" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="262" />
+            <column name="CODE_A_2" value="DJ" />
+            <column name="CODE_A_3" value="DJI" />
+            <column name="NAME" value="DJIBOUTI" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="212" />
+            <column name="CODE_A_2" value="DM" />
+            <column name="CODE_A_3" value="DMA" />
+            <column name="NAME" value="DOMINICA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="214" />
+            <column name="CODE_A_2" value="DO" />
+            <column name="CODE_A_3" value="DOM" />
+            <column name="NAME" value="DOMINICAN REPUBLIC" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="218" />
+            <column name="CODE_A_2" value="EC" />
+            <column name="CODE_A_3" value="ECU" />
+            <column name="NAME" value="ECUADOR" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="818" />
+            <column name="CODE_A_2" value="EG" />
+            <column name="CODE_A_3" value="EGY" />
+            <column name="NAME" value="EGYPT" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="222" />
+            <column name="CODE_A_2" value="SV" />
+            <column name="CODE_A_3" value="SLV" />
+            <column name="NAME" value="EL SALVADOR" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="226" />
+            <column name="CODE_A_2" value="GQ" />
+            <column name="CODE_A_3" value="GNQ" />
+            <column name="NAME" value="EQUATORIAL GUINEA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="232" />
+            <column name="CODE_A_2" value="ER" />
+            <column name="CODE_A_3" value="ERI" />
+            <column name="NAME" value="ERITREA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="233" />
+            <column name="CODE_A_2" value="EE" />
+            <column name="CODE_A_3" value="EST" />
+            <column name="NAME" value="ESTONIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="231" />
+            <column name="CODE_A_2" value="ET" />
+            <column name="CODE_A_3" value="ETH" />
+            <column name="NAME" value="ETHIOPIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="238" />
+            <column name="CODE_A_2" value="FK" />
+            <column name="CODE_A_3" value="FLK" />
+            <column name="NAME" value="FALKLAND ISLANDS (MALVINAS)" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="234" />
+            <column name="CODE_A_2" value="FO" />
+            <column name="CODE_A_3" value="FRO" />
+            <column name="NAME" value="FAROE ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="242" />
+            <column name="CODE_A_2" value="FJ" />
+            <column name="CODE_A_3" value="FJI" />
+            <column name="NAME" value="FIJI" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="246" />
+            <column name="CODE_A_2" value="FI" />
+            <column name="CODE_A_3" value="FIN" />
+            <column name="NAME" value="FINLAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="250" />
+            <column name="CODE_A_2" value="FR" />
+            <column name="CODE_A_3" value="FRA" />
+            <column name="NAME" value="FRANCE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="254" />
+            <column name="CODE_A_2" value="GF" />
+            <column name="CODE_A_3" value="GUF" />
+            <column name="NAME" value="FRENCH GUIANA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="258" />
+            <column name="CODE_A_2" value="PF" />
+            <column name="CODE_A_3" value="PYF" />
+            <column name="NAME" value="FRENCH POLYNESIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="260" />
+            <column name="CODE_A_2" value="TF" />
+            <column name="CODE_A_3" value="ATF" />
+            <column name="NAME" value="FRENCH SOUTHERN TERRITORIES" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="266" />
+            <column name="CODE_A_2" value="GA" />
+            <column name="CODE_A_3" value="GAB" />
+            <column name="NAME" value="GABON" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="270" />
+            <column name="CODE_A_2" value="GM" />
+            <column name="CODE_A_3" value="GMB" />
+            <column name="NAME" value="GAMBIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="268" />
+            <column name="CODE_A_2" value="GE" />
+            <column name="CODE_A_3" value="GEO" />
+            <column name="NAME" value="GEORGIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="276" />
+            <column name="CODE_A_2" value="DE" />
+            <column name="CODE_A_3" value="DEU" />
+            <column name="NAME" value="GERMANY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="288" />
+            <column name="CODE_A_2" value="GH" />
+            <column name="CODE_A_3" value="GHA" />
+            <column name="NAME" value="GHANA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="292" />
+            <column name="CODE_A_2" value="GI" />
+            <column name="CODE_A_3" value="GIB" />
+            <column name="NAME" value="GIBRALTAR" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="300" />
+            <column name="CODE_A_2" value="GR" />
+            <column name="CODE_A_3" value="GRC" />
+            <column name="NAME" value="GREECE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="304" />
+            <column name="CODE_A_2" value="GL" />
+            <column name="CODE_A_3" value="GRL" />
+            <column name="NAME" value="GREENLAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="308" />
+            <column name="CODE_A_2" value="GD" />
+            <column name="CODE_A_3" value="GRD" />
+            <column name="NAME" value="GRENADA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="312" />
+            <column name="CODE_A_2" value="GP" />
+            <column name="CODE_A_3" value="GLP" />
+            <column name="NAME" value="GUADELOUPE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="316" />
+            <column name="CODE_A_2" value="GU" />
+            <column name="CODE_A_3" value="GUM" />
+            <column name="NAME" value="GUAM" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="320" />
+            <column name="CODE_A_2" value="GT" />
+            <column name="CODE_A_3" value="GTM" />
+            <column name="NAME" value="GUATEMALA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="831" />
+            <column name="CODE_A_2" value="GG" />
+            <column name="CODE_A_3" value="GGY" />
+            <column name="NAME" value="GUERNSEY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="324" />
+            <column name="CODE_A_2" value="GN" />
+            <column name="CODE_A_3" value="GIN" />
+            <column name="NAME" value="GUINEA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="624" />
+            <column name="CODE_A_2" value="GW" />
+            <column name="CODE_A_3" value="GNB" />
+            <column name="NAME" value="GUINEA-BISSAU" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="328" />
+            <column name="CODE_A_2" value="GY" />
+            <column name="CODE_A_3" value="GUY" />
+            <column name="NAME" value="GUYANA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="332" />
+            <column name="CODE_A_2" value="HT" />
+            <column name="CODE_A_3" value="HTI" />
+            <column name="NAME" value="HAITI" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="334" />
+            <column name="CODE_A_2" value="HM" />
+            <column name="CODE_A_3" value="HMD" />
+            <column name="NAME" value="HEARD AND MC DONALD ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="336" />
+            <column name="CODE_A_2" value="VA" />
+            <column name="CODE_A_3" value="VAT" />
+            <column name="NAME" value="HOLY SEE (VATICAN CITY STATE)" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="340" />
+            <column name="CODE_A_2" value="HN" />
+            <column name="CODE_A_3" value="HND" />
+            <column name="NAME" value="HONDURAS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="344" />
+            <column name="CODE_A_2" value="HK" />
+            <column name="CODE_A_3" value="HKG" />
+            <column name="NAME" value="HONG KONG" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="348" />
+            <column name="CODE_A_2" value="HU" />
+            <column name="CODE_A_3" value="HUN" />
+            <column name="NAME" value="HUNGARY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="352" />
+            <column name="CODE_A_2" value="IS" />
+            <column name="CODE_A_3" value="ISL" />
+            <column name="NAME" value="ICELAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="356" />
+            <column name="CODE_A_2" value="IN" />
+            <column name="CODE_A_3" value="IND" />
+            <column name="NAME" value="INDIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="360" />
+            <column name="CODE_A_2" value="ID" />
+            <column name="CODE_A_3" value="IDN" />
+            <column name="NAME" value="INDONESIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="364" />
+            <column name="CODE_A_2" value="IR" />
+            <column name="CODE_A_3" value="IRN" />
+            <column name="NAME" value="IRAN (ISLAMIC REPUBLIC OF)" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="368" />
+            <column name="CODE_A_2" value="IQ" />
+            <column name="CODE_A_3" value="IRQ" />
+            <column name="NAME" value="IRAQ" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="372" />
+            <column name="CODE_A_2" value="IE" />
+            <column name="CODE_A_3" value="IRL" />
+            <column name="NAME" value="IRELAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="833" />
+            <column name="CODE_A_2" value="IM" />
+            <column name="CODE_A_3" value="IMN" />
+            <column name="NAME" value="ISLE OF MAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="376" />
+            <column name="CODE_A_2" value="IL" />
+            <column name="CODE_A_3" value="ISR" />
+            <column name="NAME" value="ISRAEL" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="380" />
+            <column name="CODE_A_2" value="IT" />
+            <column name="CODE_A_3" value="ITA" />
+            <column name="NAME" value="ITALY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="388" />
+            <column name="CODE_A_2" value="JM" />
+            <column name="CODE_A_3" value="JAM" />
+            <column name="NAME" value="JAMAICA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="392" />
+            <column name="CODE_A_2" value="JP" />
+            <column name="CODE_A_3" value="JPN" />
+            <column name="NAME" value="JAPAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="832" />
+            <column name="CODE_A_2" value="JE" />
+            <column name="CODE_A_3" value="JEY" />
+            <column name="NAME" value="JERSEY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="400" />
+            <column name="CODE_A_2" value="JO" />
+            <column name="CODE_A_3" value="JOR" />
+            <column name="NAME" value="JORDAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="398" />
+            <column name="CODE_A_2" value="KZ" />
+            <column name="CODE_A_3" value="KAZ" />
+            <column name="NAME" value="KAZAKHSTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="404" />
+            <column name="CODE_A_2" value="KE" />
+            <column name="CODE_A_3" value="KEN" />
+            <column name="NAME" value="KENYA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="296" />
+            <column name="CODE_A_2" value="KI" />
+            <column name="CODE_A_3" value="KIR" />
+            <column name="NAME" value="KIRIBATI" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="408" />
+            <column name="CODE_A_2" value="KP" />
+            <column name="CODE_A_3" value="PRK" />
+            <column name="NAME" value="KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="410" />
+            <column name="CODE_A_2" value="KR" />
+            <column name="CODE_A_3" value="KOR" />
+            <column name="NAME" value="KOREA, REPUBLIC OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="414" />
+            <column name="CODE_A_2" value="KW" />
+            <column name="CODE_A_3" value="KWT" />
+            <column name="NAME" value="KUWAIT" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="417" />
+            <column name="CODE_A_2" value="KG" />
+            <column name="CODE_A_3" value="KGZ" />
+            <column name="NAME" value="KYRGYZSTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="418" />
+            <column name="CODE_A_2" value="LA" />
+            <column name="CODE_A_3" value="LAO" />
+            <column name="NAME" value="LAO PEOPLE'S DEMOCRATIC REPUBLIC" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="428" />
+            <column name="CODE_A_2" value="LV" />
+            <column name="CODE_A_3" value="LVA" />
+            <column name="NAME" value="LATVIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="422" />
+            <column name="CODE_A_2" value="LB" />
+            <column name="CODE_A_3" value="LBN" />
+            <column name="NAME" value="LEBANON" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="426" />
+            <column name="CODE_A_2" value="LS" />
+            <column name="CODE_A_3" value="LSO" />
+            <column name="NAME" value="LESOTHO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="430" />
+            <column name="CODE_A_2" value="LR" />
+            <column name="CODE_A_3" value="LBR" />
+            <column name="NAME" value="LIBERIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="434" />
+            <column name="CODE_A_2" value="LY" />
+            <column name="CODE_A_3" value="LBY" />
+            <column name="NAME" value="LIBYA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="438" />
+            <column name="CODE_A_2" value="LI" />
+            <column name="CODE_A_3" value="LIE" />
+            <column name="NAME" value="LIECHTENSTEIN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="440" />
+            <column name="CODE_A_2" value="LT" />
+            <column name="CODE_A_3" value="LTU" />
+            <column name="NAME" value="LITHUANIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="442" />
+            <column name="CODE_A_2" value="LU" />
+            <column name="CODE_A_3" value="LUX" />
+            <column name="NAME" value="LUXEMBOURG" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="446" />
+            <column name="CODE_A_2" value="MO" />
+            <column name="CODE_A_3" value="MAC" />
+            <column name="NAME" value="MACAO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="807" />
+            <column name="CODE_A_2" value="MK" />
+            <column name="CODE_A_3" value="MKD" />
+            <column name="NAME" value="MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="450" />
+            <column name="CODE_A_2" value="MG" />
+            <column name="CODE_A_3" value="MDG" />
+            <column name="NAME" value="MADAGASCAR" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="454" />
+            <column name="CODE_A_2" value="MW" />
+            <column name="CODE_A_3" value="MWI" />
+            <column name="NAME" value="MALAWI" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="458" />
+            <column name="CODE_A_2" value="MY" />
+            <column name="CODE_A_3" value="MYS" />
+            <column name="NAME" value="MALAYSIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="462" />
+            <column name="CODE_A_2" value="MV" />
+            <column name="CODE_A_3" value="MDV" />
+            <column name="NAME" value="MALDIVES" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="466" />
+            <column name="CODE_A_2" value="ML" />
+            <column name="CODE_A_3" value="MLI" />
+            <column name="NAME" value="MALI" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="470" />
+            <column name="CODE_A_2" value="MT" />
+            <column name="CODE_A_3" value="MLT" />
+            <column name="NAME" value="MALTA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="485" />
+            <column name="CODE_A_2" value="MH" />
+            <column name="CODE_A_3" value="MHL" />
+            <column name="NAME" value="MARSHALL ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="474" />
+            <column name="CODE_A_2" value="MQ" />
+            <column name="CODE_A_3" value="MTQ" />
+            <column name="NAME" value="MARTINIQUE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="478" />
+            <column name="CODE_A_2" value="MR" />
+            <column name="CODE_A_3" value="MRT" />
+            <column name="NAME" value="MAURITANIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="480" />
+            <column name="CODE_A_2" value="MU" />
+            <column name="CODE_A_3" value="MUS" />
+            <column name="NAME" value="MAURITIUS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="175" />
+            <column name="CODE_A_2" value="YT" />
+            <column name="CODE_A_3" value="MYT" />
+            <column name="NAME" value="MAYOTTE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="484" />
+            <column name="CODE_A_2" value="MX" />
+            <column name="CODE_A_3" value="MEX" />
+            <column name="NAME" value="MEXICO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="583" />
+            <column name="CODE_A_2" value="FM" />
+            <column name="CODE_A_3" value="FSM" />
+            <column name="NAME" value="MICRONESIA, FEDERATED STATES OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="498" />
+            <column name="CODE_A_2" value="MD" />
+            <column name="CODE_A_3" value="MDA" />
+            <column name="NAME" value="MOLDOVA, REPUBLIC OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="492" />
+            <column name="CODE_A_2" value="MC" />
+            <column name="CODE_A_3" value="MCO" />
+            <column name="NAME" value="MONACO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="496" />
+            <column name="CODE_A_2" value="MN" />
+            <column name="CODE_A_3" value="MNG" />
+            <column name="NAME" value="MONGOLIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="499" />
+            <column name="CODE_A_2" value="ME" />
+            <column name="CODE_A_3" value="MNE" />
+            <column name="NAME" value="MONTENEGRO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="500" />
+            <column name="CODE_A_2" value="MS" />
+            <column name="CODE_A_3" value="MSR" />
+            <column name="NAME" value="MONTSERRAT" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="504" />
+            <column name="CODE_A_2" value="MA" />
+            <column name="CODE_A_3" value="MAR" />
+            <column name="NAME" value="MOROCCO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="508" />
+            <column name="CODE_A_2" value="MZ" />
+            <column name="CODE_A_3" value="MOZ" />
+            <column name="NAME" value="MOZAMBIQUE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="104" />
+            <column name="CODE_A_2" value="MM" />
+            <column name="CODE_A_3" value="MMR" />
+            <column name="NAME" value="MYANMAR" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="516" />
+            <column name="CODE_A_2" value="NA" />
+            <column name="CODE_A_3" value="NAM" />
+            <column name="NAME" value="NAMIBIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="520" />
+            <column name="CODE_A_2" value="NR" />
+            <column name="CODE_A_3" value="NRU" />
+            <column name="NAME" value="NAURU" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="524" />
+            <column name="CODE_A_2" value="NP" />
+            <column name="CODE_A_3" value="NPL" />
+            <column name="NAME" value="NEPAL" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="528" />
+            <column name="CODE_A_2" value="NL" />
+            <column name="CODE_A_3" value="NLD" />
+            <column name="NAME" value="NETHERLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="540" />
+            <column name="CODE_A_2" value="NC" />
+            <column name="CODE_A_3" value="NCL" />
+            <column name="NAME" value="NEW CALEDONIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="554" />
+            <column name="CODE_A_2" value="NZ" />
+            <column name="CODE_A_3" value="NZL" />
+            <column name="NAME" value="NEW ZEALAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="558" />
+            <column name="CODE_A_2" value="NI" />
+            <column name="CODE_A_3" value="NIC" />
+            <column name="NAME" value="NICARAGUA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="562" />
+            <column name="CODE_A_2" value="NE" />
+            <column name="CODE_A_3" value="NER" />
+            <column name="NAME" value="NIGER" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="566" />
+            <column name="CODE_A_2" value="NG" />
+            <column name="CODE_A_3" value="NGA" />
+            <column name="NAME" value="NIGERIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="570" />
+            <column name="CODE_A_2" value="NU" />
+            <column name="CODE_A_3" value="NIU" />
+            <column name="NAME" value="NIUE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="574" />
+            <column name="CODE_A_2" value="NF" />
+            <column name="CODE_A_3" value="NFK" />
+            <column name="NAME" value="NORFOLK ISLAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="580" />
+            <column name="CODE_A_2" value="MP" />
+            <column name="CODE_A_3" value="MNP" />
+            <column name="NAME" value="NORTHERN MARIANA ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="578" />
+            <column name="CODE_A_2" value="NO" />
+            <column name="CODE_A_3" value="NOR" />
+            <column name="NAME" value="NORWAY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="512" />
+            <column name="CODE_A_2" value="OM" />
+            <column name="CODE_A_3" value="OMN" />
+            <column name="NAME" value="OMAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="586" />
+            <column name="CODE_A_2" value="PK" />
+            <column name="CODE_A_3" value="PAK" />
+            <column name="NAME" value="PAKISTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="585" />
+            <column name="CODE_A_2" value="PW" />
+            <column name="CODE_A_3" value="PLW" />
+            <column name="NAME" value="PALAU" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="275" />
+            <column name="CODE_A_2" value="PS" />
+            <column name="CODE_A_3" value="PSE" />
+            <column name="NAME" value="PALESTINE, STATE OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="591" />
+            <column name="CODE_A_2" value="PA" />
+            <column name="CODE_A_3" value="PAN" />
+            <column name="NAME" value="PANAMA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="598" />
+            <column name="CODE_A_2" value="PG" />
+            <column name="CODE_A_3" value="PNG" />
+            <column name="NAME" value="PAPUA NEW GUINEA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="600" />
+            <column name="CODE_A_2" value="PY" />
+            <column name="CODE_A_3" value="PRY" />
+            <column name="NAME" value="PARAGUAY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="604" />
+            <column name="CODE_A_2" value="PE" />
+            <column name="CODE_A_3" value="PER" />
+            <column name="NAME" value="PERU" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="608" />
+            <column name="CODE_A_2" value="PH" />
+            <column name="CODE_A_3" value="PHL" />
+            <column name="NAME" value="PHILIPPINES" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="612" />
+            <column name="CODE_A_2" value="PN" />
+            <column name="CODE_A_3" value="PCN" />
+            <column name="NAME" value="PITCAIRN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="616" />
+            <column name="CODE_A_2" value="PL" />
+            <column name="CODE_A_3" value="POL" />
+            <column name="NAME" value="POLAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="620" />
+            <column name="CODE_A_2" value="PT" />
+            <column name="CODE_A_3" value="PRT" />
+            <column name="NAME" value="PORTUGAL" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="630" />
+            <column name="CODE_A_2" value="PR" />
+            <column name="CODE_A_3" value="PRI" />
+            <column name="NAME" value="PUERTO RICO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="634" />
+            <column name="CODE_A_2" value="QA" />
+            <column name="CODE_A_3" value="QAT" />
+            <column name="NAME" value="QATAR" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="638" />
+            <column name="CODE_A_2" value="RE" />
+            <column name="CODE_A_3" value="REU" />
+            <column name="NAME" value="REUNION" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="642" />
+            <column name="CODE_A_2" value="RO" />
+            <column name="CODE_A_3" value="ROU" />
+            <column name="NAME" value="ROMANIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="643" />
+            <column name="CODE_A_2" value="RU" />
+            <column name="CODE_A_3" value="RUS" />
+            <column name="NAME" value="RUSSIAN FEDERATION" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="646" />
+            <column name="CODE_A_2" value="RW" />
+            <column name="CODE_A_3" value="RWA" />
+            <column name="NAME" value="RWANDA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="654" />
+            <column name="CODE_A_2" value="SH" />
+            <column name="CODE_A_3" value="SHN" />
+            <column name="NAME" value="SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="652" />
+            <column name="CODE_A_2" value="BL" />
+            <column name="CODE_A_3" value="BLM" />
+            <column name="NAME" value="SAINT BARTHÉLEMY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="659" />
+            <column name="CODE_A_2" value="KN" />
+            <column name="CODE_A_3" value="SKN" />
+            <column name="NAME" value="SAINT KITTS AND NEVIS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="662" />
+            <column name="CODE_A_2" value="LC" />
+            <column name="CODE_A_3" value="LCA" />
+            <column name="NAME" value="SAINT LUCIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="666" />
+            <column name="CODE_A_2" value="PM" />
+            <column name="CODE_A_3" value="SPM" />
+            <column name="NAME" value="SAINT PIERRE AND MIQUELON" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="670" />
+            <column name="CODE_A_2" value="VC" />
+            <column name="CODE_A_3" value="VCT" />
+            <column name="NAME" value="SAINT VINCENT AND THE GRENADINES" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="882" />
+            <column name="CODE_A_2" value="WS" />
+            <column name="CODE_A_3" value="WSM" />
+            <column name="NAME" value="SAMOA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="674" />
+            <column name="CODE_A_2" value="SM" />
+            <column name="CODE_A_3" value="SMR" />
+            <column name="NAME" value="SAN MARINO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="678" />
+            <column name="CODE_A_2" value="ST" />
+            <column name="CODE_A_3" value="STP" />
+            <column name="NAME" value="SAO TOME AND PRINCIPE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="682" />
+            <column name="CODE_A_2" value="SA" />
+            <column name="CODE_A_3" value="SAU" />
+            <column name="NAME" value="SAUDI ARABIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="686" />
+            <column name="CODE_A_2" value="SN" />
+            <column name="CODE_A_3" value="SEN" />
+            <column name="NAME" value="SENEGAL" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="688" />
+            <column name="CODE_A_2" value="RS" />
+            <column name="CODE_A_3" value="SRB" />
+            <column name="NAME" value="SERBIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="690" />
+            <column name="CODE_A_2" value="SC" />
+            <column name="CODE_A_3" value="SYC" />
+            <column name="NAME" value="SEYCHELLES" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="694" />
+            <column name="CODE_A_2" value="SL" />
+            <column name="CODE_A_3" value="SLE" />
+            <column name="NAME" value="SIERRA LEONE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="702" />
+            <column name="CODE_A_2" value="SG" />
+            <column name="CODE_A_3" value="SGP" />
+            <column name="NAME" value="SINGAPORE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="534" />
+            <column name="CODE_A_2" value="SX" />
+            <column name="CODE_A_3" value="SXM" />
+            <column name="NAME" value="SINT MAARTEN (DUTCH PART)" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="703" />
+            <column name="CODE_A_2" value="SK" />
+            <column name="CODE_A_3" value="SVK" />
+            <column name="NAME" value="SLOVAKIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="705" />
+            <column name="CODE_A_2" value="SI" />
+            <column name="CODE_A_3" value="SVN" />
+            <column name="NAME" value="SLOVENIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="090" />
+            <column name="CODE_A_2" value="SB" />
+            <column name="CODE_A_3" value="SLB" />
+            <column name="NAME" value="SOLOMON ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="706" />
+            <column name="CODE_A_2" value="SO" />
+            <column name="CODE_A_3" value="SOM" />
+            <column name="NAME" value="SOMALIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="710" />
+            <column name="CODE_A_2" value="ZA" />
+            <column name="CODE_A_3" value="ZAF" />
+            <column name="NAME" value="SOUTH AFRICA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="239" />
+            <column name="CODE_A_2" value="GS" />
+            <column name="CODE_A_3" value="SGS" />
+            <column name="NAME" value="SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="728" />
+            <column name="CODE_A_2" value="SS" />
+            <column name="CODE_A_3" value="SSD" />
+            <column name="NAME" value="SOUTH SUDAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="724" />
+            <column name="CODE_A_2" value="ES" />
+            <column name="CODE_A_3" value="ESP" />
+            <column name="NAME" value="SPAIN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="144" />
+            <column name="CODE_A_2" value="LK" />
+            <column name="CODE_A_3" value="LKA" />
+            <column name="NAME" value="SRI LANKA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="729" />
+            <column name="CODE_A_2" value="SD" />
+            <column name="CODE_A_3" value="SDN" />
+            <column name="NAME" value="SUDAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="740" />
+            <column name="CODE_A_2" value="SR" />
+            <column name="CODE_A_3" value="SUR" />
+            <column name="NAME" value="SURINAME" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="744" />
+            <column name="CODE_A_2" value="SJ" />
+            <column name="CODE_A_3" value="SJM" />
+            <column name="NAME" value="SVALBARD AND JAN MAYEN ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="748" />
+            <column name="CODE_A_2" value="SZ" />
+            <column name="CODE_A_3" value="SWZ" />
+            <column name="NAME" value="SWAZILAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="752" />
+            <column name="CODE_A_2" value="SE" />
+            <column name="CODE_A_3" value="SWE" />
+            <column name="NAME" value="SWEDEN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="756" />
+            <column name="CODE_A_2" value="CH" />
+            <column name="CODE_A_3" value="CHE" />
+            <column name="NAME" value="SWITZERLAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="760" />
+            <column name="CODE_A_2" value="SY" />
+            <column name="CODE_A_3" value="SYR" />
+            <column name="NAME" value="SYRIAN ARAB REPUBLIC" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="158" />
+            <column name="CODE_A_2" value="TW" />
+            <column name="CODE_A_3" value="TWN" />
+            <column name="NAME" value="TAIWAN, PROVINCE OF CHINA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="762" />
+            <column name="CODE_A_2" value="TJ" />
+            <column name="CODE_A_3" value="TJK" />
+            <column name="NAME" value="TAJIKISTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="834" />
+            <column name="CODE_A_2" value="TZ" />
+            <column name="CODE_A_3" value="TAN" />
+            <column name="NAME" value="TANZANIA, UNITED REPUBLIC OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="764" />
+            <column name="CODE_A_2" value="TH" />
+            <column name="CODE_A_3" value="THA" />
+            <column name="NAME" value="THAILAND" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="626" />
+            <column name="CODE_A_2" value="TL" />
+            <column name="CODE_A_3" value="TLS" />
+            <column name="NAME" value="TIMOR-LESTE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="768" />
+            <column name="CODE_A_2" value="TG" />
+            <column name="CODE_A_3" value="TGO" />
+            <column name="NAME" value="TOGO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="772" />
+            <column name="CODE_A_2" value="TK" />
+            <column name="CODE_A_3" value="TKL" />
+            <column name="NAME" value="TOKELAU" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="776" />
+            <column name="CODE_A_2" value="TO" />
+            <column name="CODE_A_3" value="TON" />
+            <column name="NAME" value="TONGA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="780" />
+            <column name="CODE_A_2" value="TT" />
+            <column name="CODE_A_3" value="TTO" />
+            <column name="NAME" value="TRINIDAD AND TOBAGO" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="788" />
+            <column name="CODE_A_2" value="TN" />
+            <column name="CODE_A_3" value="TUN" />
+            <column name="NAME" value="TUNISIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="792" />
+            <column name="CODE_A_2" value="TR" />
+            <column name="CODE_A_3" value="TUR" />
+            <column name="NAME" value="TURKEY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="795" />
+            <column name="CODE_A_2" value="TM" />
+            <column name="CODE_A_3" value="TKM" />
+            <column name="NAME" value="TURKMENISTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="796" />
+            <column name="CODE_A_2" value="TC" />
+            <column name="CODE_A_3" value="TCA" />
+            <column name="NAME" value="TURKS AND CAICOS ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="798" />
+            <column name="CODE_A_2" value="TV" />
+            <column name="CODE_A_3" value="TUV" />
+            <column name="NAME" value="TUVALU" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="800" />
+            <column name="CODE_A_2" value="UG" />
+            <column name="CODE_A_3" value="UGA" />
+            <column name="NAME" value="UGANDA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="804" />
+            <column name="CODE_A_2" value="UA" />
+            <column name="CODE_A_3" value="UKR" />
+            <column name="NAME" value="UKRAINE" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="784" />
+            <column name="CODE_A_2" value="AE" />
+            <column name="CODE_A_3" value="ARE" />
+            <column name="NAME" value="UNITED ARAB EMIRATES" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="826" />
+            <column name="CODE_A_2" value="GB" />
+            <column name="CODE_A_3" value="GBR" />
+            <column name="NAME" value="UNITED KINGDOM*" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="840" />
+            <column name="CODE_A_2" value="US" />
+            <column name="CODE_A_3" value="USA" />
+            <column name="NAME" value="UNITED STATES" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="581" />
+            <column name="CODE_A_2" value="UM" />
+            <column name="CODE_A_3" value="UMI" />
+            <column name="NAME" value="UNITED STATES MINOR OUTLYING ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="858" />
+            <column name="CODE_A_2" value="UY" />
+            <column name="CODE_A_3" value="URY" />
+            <column name="NAME" value="URUGUAY" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="860" />
+            <column name="CODE_A_2" value="UZ" />
+            <column name="CODE_A_3" value="UZB" />
+            <column name="NAME" value="UZBEKISTAN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="548" />
+            <column name="CODE_A_2" value="VU" />
+            <column name="CODE_A_3" value="VUT" />
+            <column name="NAME" value="VANUATU" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="862" />
+            <column name="CODE_A_2" value="VE" />
+            <column name="CODE_A_3" value="VEN" />
+            <column name="NAME" value="VENEZUELA, BOLIVARIAN REPUBLIC OF" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="704" />
+            <column name="CODE_A_2" value="VN" />
+            <column name="CODE_A_3" value="VIE" />
+            <column name="NAME" value="VIETNAM" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="092" />
+            <column name="CODE_A_2" value="VG" />
+            <column name="CODE_A_3" value="BVI" />
+            <column name="NAME" value="VIRGIN ISLANDS (BRITISH)" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="850" />
+            <column name="CODE_A_2" value="VI" />
+            <column name="CODE_A_3" value="VIR" />
+            <column name="NAME" value="VIRGIN ISLANDS (U.S.)" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="876" />
+            <column name="CODE_A_2" value="WF" />
+            <column name="CODE_A_3" value="WLF" />
+            <column name="NAME" value="WALLIS AND FUTUNA ISLANDS" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="732" />
+            <column name="CODE_A_2" value="EH" />
+            <column name="CODE_A_3" value="ESH" />
+            <column name="NAME" value="WESTERN SAHARA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="887" />
+            <column name="CODE_A_2" value="YE" />
+            <column name="CODE_A_3" value="YEM" />
+            <column name="NAME" value="YEMEN" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="894" />
+            <column name="CODE_A_2" value="ZM" />
+            <column name="CODE_A_3" value="ZMB" />
+            <column name="NAME" value="ZAMBIA" />
+        </insert>
+        <insert tableName="COUNTRY">
+            <column name="CODE" value="716" />
+            <column name="CODE_A_2" value="ZW" />
+            <column name="CODE_A_3" value="ZWE" />
+            <column name="NAME" value="ZIMBABWE" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
