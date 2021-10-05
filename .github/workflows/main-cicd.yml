@@ -54,7 +54,10 @@ jobs:
               id: backend-tests
               run: |
                   chmod +x gradlew
-                  ./gradlew clean test integrationTest
+                  ./gradlew clean test integrationTest -x webpack
+            - name: Run frontend test
+              id: frontend-tests
+              run: npm run test-ci
             - name: Package application
               id: package-app
               if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
