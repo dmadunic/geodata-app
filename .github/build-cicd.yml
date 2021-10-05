@@ -1,0 +1,82 @@
+#==============================================================================
+# CI/CD github pipline script: 
+#   - build
+#   - publish docker image to DockerHub
+#   - redeploy latest image to k8s cluster
+#
+# This script to work requires the following secrets to be defined:
+# - DOCKER_USERNAME : 
+# - DOCKER_PASSWORD : 
+# - KUBE_SERVER
+# - KUBE_TOKEN
+#
+# (c) Agency04 / Domagoj Madunić
+#==============================================================================
+name: GeodataApp CI/CD
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+    validation:
+        name: "Gradle Wrapper Validation"
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: gradle/wrapper-validation-action@v1
+    pipeline:
+        name: CI/CD pipeline
+        runs-on: ubuntu-latest
+        if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.pull_request.title, '[skip ci]') && !contains(github.event.pull_request.title, '[ci skip]')"
+        timeout-minutes: 40
+        env:
+            NODE_VERSION: 12.16.1
+            SPRING_OUTPUT_ANSI_ENABLED: DETECT
+            SPRING_JPA_SHOW_SQL: false
+            JHI_DISABLE_WEBPACK_LOGS: true
+            DEPLOYMENT_NAME: geodata-app-deployment
+            #KUBE_SERVER: https://740e865b-b00f-4e42-970f-67c87c1c634d.k8s.ondigitalocean.com
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12.16.1
+            - uses: actions/setup-java@v1
+              with:
+                  java-version: '11.x'
+            - name: Install node.js packages
+              id: install-node-js
+              run: npm install
+            - name: Run backend test
+              id: backend-tests
+              run: |
+                  chmod +x gradlew
+                  ./gradlew clean test integrationTest
+            - name: Package application
+              id: package-app
+              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
+              run: ./gradlew bootJar -Pprod -x test -x integrationTest
+            - name: Build and publish docker image (latest)
+              id: docker-build-push-latest
+              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
+              run: |
+                  ./gradlew jib -PimageVersion=latest -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
+            - name: Build and publish docker image (release)
+              id: docker-build-push-release
+              if: (github.event_name == 'push' || github.event.pull_request.merged == 'true') && startsWith(github.ref, 'refs/tags/')
+              run: |
+                  ./gradlew jib -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
+#            - name: Install kubectl
+#              id: install-kubectl
+#              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
+#              run: |
+#                  sudo apt-get install kubectl
+#            - name: Deploy to (dev) k8s cluster
+#              id: deploy-k8s-cluster-dev
+#              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
+#              run: |
+#                  kubectl rollout restart deployment $DEPLOYMENT_NAME --insecure-skip-tls-verify=true --server=$KUBE_SERVER --token="${{ secrets.KUBE_TOKEN }}"
+      
