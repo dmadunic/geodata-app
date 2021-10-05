@@ -24,7 +24,6 @@ plugins {
 }
 
 group = "com.ag04.geodata"
-version = "0.0.1-SNAPSHOT"
 
 description = ""
 
