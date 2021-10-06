@@ -54,7 +54,7 @@ jobs:
               id: backend-tests
               run: |
                   chmod +x gradlew
-                  ./gradlew clean test integrationTest -x webpack
+                  ./gradlew clean test integrationTest
             - name: Run frontend test
               id: frontend-tests
               run: npm run test-ci
