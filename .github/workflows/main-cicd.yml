@@ -57,7 +57,7 @@ jobs:
                   ./gradlew clean test integrationTest
             - name: Run frontend test
               id: frontend-tests
-              run: npm run test-ci
+              run: npm run test
             - name: Package application
               id: package-app
               if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
