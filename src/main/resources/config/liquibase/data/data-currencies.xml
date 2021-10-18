@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="0001-20180809" author="dmadunic" context="!test">
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Canadian Dollar"/>
+            <column name="CODE" value="CAD"/>
+            <column name="NUM_CODE" value="124"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Norwegian Krone"/>
+            <column name="CODE" value="NOK"/>
+            <column name="NUM_CODE" value="578"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Russian Ruble"/>
+            <column name="CODE" value="RUB"/>
+            <column name="NUM_CODE" value="643"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Romanian Leu"/>
+            <column name="CODE" value="RON"/>
+            <column name="NUM_CODE" value="946"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="US Dollar"/>
+            <column name="CODE" value="USD"/>
+            <column name="NUM_CODE" value="840"/>
+            <column name="PREFERRED" value="true"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Bosnia-Herzegovina Convertible Mark"/>
+            <column name="CODE" value="BAM"/>
+            <column name="NUM_CODE" value="977"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Swedish Krona"/>
+            <column name="CODE" value="SEK"/>
+            <column name="NUM_CODE" value="752"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Czech Republic Koruna"/>
+            <column name="CODE" value="CZK"/>
+            <column name="NUM_CODE" value="203"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Serbian Dinar"/>
+            <column name="CODE" value="RSD"/>
+            <column name="NUM_CODE" value="941"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Turkish Lira"/>
+            <column name="CODE" value="TRY"/>
+            <column name="NUM_CODE" value="949"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Euro"/>
+            <column name="CODE" value="EUR"/>
+            <column name="NUM_CODE" value="978"/>
+            <column name="PREFERRED" value="true"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Croatian Kuna"/>
+            <column name="CODE" value="HRK"/>
+            <column name="NUM_CODE" value="191"/>
+            <column name="PREFERRED" value="true"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Australian Dollar"/>
+            <column name="CODE" value="AUD"/>
+            <column name="NUM_CODE" value="36"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Swiss Franc"/>
+            <column name="CODE" value="CHF"/>
+            <column name="NUM_CODE" value="756"/>
+            <column name="PREFERRED" value="true"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="British Pound Sterling"/>
+            <column name="CODE" value="GBP"/>
+            <column name="NUM_CODE" value="826"/>
+            <column name="PREFERRED" value="true"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Danish Krone"/>
+            <column name="CODE" value="DKK"/>
+            <column name="NUM_CODE" value="208"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Hungarian Forint"/>
+            <column name="CODE" value="HUF"/>
+            <column name="NUM_CODE" value="348"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Japanese Yen"/>
+            <column name="CODE" value="JPY"/>
+            <column name="NUM_CODE" value="392"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Polish Zloty"/>
+            <column name="CODE" value="PLN"/>
+            <column name="NUM_CODE" value="985"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+        <insert tableName="CURRENCY">
+            <column name="NAME" value="Chinese Yuan"/>
+            <column name="CODE" value="CNY"/>
+            <column name="NUM_CODE" value="156"/>
+            <column name="PREFERRED" value="false"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

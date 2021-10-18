@@ -23,5 +23,6 @@
 
     <include file="config/liquibase/data/data-countries.xml"/>
     <include file="config/liquibase/data/data-countries-flags.xml"/>
+    <include file="config/liquibase/data/data-currencies.xml"/>
     
 </databaseChangeLog>
