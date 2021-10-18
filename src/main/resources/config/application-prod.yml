@@ -33,22 +33,25 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/geodataApp
-    username: geodataApp
-    password:
+    url: ${DATASOURCE_URL}
+    username: ${DB_USER}
+    password: ${DB_PWD}
     hikari:
       poolName: Hikari
       auto-commit: false
+      maximum-pool-size: ${MAX_POOL_SIZE:10}
+      leak-detection-threshold: 5000
   jpa:
     database-platform: tech.jhipster.domain.util.FixedPostgreSQL10Dialect
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
-    contexts: prod
+    contexts: ${LIQUIBASE_CONTEXTS}
+    default-schema: ${DB_SCHEMA:public}
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT:25}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PWD}
   thymeleaf:
     cache: true
 
@@ -106,7 +109,7 @@ jhipster:
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://my-server-url-to-change # Modify according to your server's URL
+    base-url: ${APP_BASE_URL} # Modify according to your server's URL
   logging:
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
