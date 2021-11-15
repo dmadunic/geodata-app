@@ -5,7 +5,7 @@ metadata:
   namespace: geodata
 spec: 
   type: ExternalName
-  externalName: host.minikube.internal
+  externalName: 35.198.76.7
   ports:
     - port: 5432
       protocol: TCP

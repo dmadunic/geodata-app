@@ -6,8 +6,8 @@ metadata:
   labels:
     app: geodata-app
   annotations:
-    configmap.reloader.stakater.com/reload: "tfc-batch-app-config"
-    secret.reloader.stakater.com/reload: "tfc-batch-app-secret"
+    configmap.reloader.stakater.com/reload: "geodata-app-config"
+    secret.reloader.stakater.com/reload: "geodata-app-secret"
 spec:
   replicas: 1
   strategy:
@@ -21,6 +21,8 @@ spec:
         app: geodata-app-pod
         deploy: geodata-app-pod
     spec:
+      nodeSelector:
+        cloud.google.com/gke-nodepool: e2-medium-pool
       containers:
         - name: geodata-app
           image: ag04/geodata-app:latest
