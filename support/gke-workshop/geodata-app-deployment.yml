@@ -1,0 +1,114 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: geodata-app-deployment
+  namespace: geodata
+  labels:
+    app: geodata-app
+  annotations:
+    configmap.reloader.stakater.com/reload: "tfc-batch-app-config"
+    secret.reloader.stakater.com/reload: "tfc-batch-app-secret"
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      deploy: geodata-app-pod
+  template:
+    metadata:
+      labels:
+        app: geodata-app-pod
+        deploy: geodata-app-pod
+    spec:
+      containers:
+        - name: geodata-app
+          image: ag04/geodata-app:latest
+          imagePullPolicy: Always
+          env:
+          - name: _JAVA_OPTIONS
+            value: "-Xmx768m -Xms384m"
+          - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
+            value: "true"
+          - name: JHIPSTER_SLEEP
+            value: "1"
+          - name: SPRING_PROFILES_ACTIVE
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "spring_profiles_active"
+          - name: DATASOURCE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "datasource_url"
+          - name: DB_USER
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "geodata_db_user"
+          - name: DB_PWD
+            valueFrom:
+              secretKeyRef:
+                name: geodata-app-secret
+                key: "geodata_db_pwd"
+          - name: DB_SCHEMA
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "db_schema"
+          - name: LIQUIBASE_CONTEXTS
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "liquibase_contexts"
+          - name: APP_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "app_base_url"
+          - name: MAIL_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "mail_host"
+          - name: MAIL_USERNAME
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "mail_username"
+          - name: MAIL_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: geodata-app-config
+                key: "mail_port"
+          - name: MAIL_PWD
+            valueFrom:
+              secretKeyRef:
+                name: geodata-app-secret
+                key: "geodata-mail-pwd"
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              memory: '384Mi'
+              cpu: '400m'
+            limits:
+              memory: '768Mi'
+              cpu: '1'
+          readinessProbe:
+            httpGet:
+              path: /management/health
+              port: http
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 6
+          livenessProbe:
+            httpGet:
+              path: /management/health
+              port: http
+            initialDelaySeconds: 120
+            periodSeconds: 10
+            failureThreshold: 3

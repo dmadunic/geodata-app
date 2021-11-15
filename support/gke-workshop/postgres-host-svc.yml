@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-db-svc
+  namespace: geodata
+spec: 
+  type: ExternalName
+  externalName: host.minikube.internal
+  ports:
+    - port: 5432
+      protocol: TCP

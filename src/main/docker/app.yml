@@ -13,8 +13,8 @@ services:
       - DATASOURCE_URL=jdbc:postgresql://geodataapp-postgresql:5432/geodataApp
       - DB_USER=geodataApp
       - DB_PWD=
-      - LIQUIBASE_CONTEXTS=dev
       - DB_SCHEMA=public
+      - LIQUIBASE_CONTEXTS=dev
       - MAIL_HOST=localhost
       - MAIL_PORT=25
       - MAIL_USERNAME=

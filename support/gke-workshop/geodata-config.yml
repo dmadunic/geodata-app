@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: geodata-app-config
+  namespace: geodata
+data:
+  spring_profiles_active: "prod,api-docs"
+  datasource_url: "jdbc:postgresql://postgres-db-svc:5432/ag04"
+  geodata_db_user: "geodata"
+  db_schema: "geodata"
+  liquibase_contexts: "dev"
+  app_base_url: ""
+  mail_host: "localhost"
+  mail_username: ""
+  mail_port: ""
