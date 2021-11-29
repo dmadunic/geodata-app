@@ -1,4 +1,4 @@
-# geodataApp
+# Geodata App
 ![GeoData CI/CD](https://github.com/dmadunic/geodata-app/actions/workflows/main-cicd.yml/badge.svg?branch=master)
 ![](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white&style=flat)
 ![](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white&style=flat)
@@ -12,10 +12,31 @@ This application was generated using JHipster 7.1.0, you can find documentation 
 
 ## Development
 
-Before you can build this project, you must install and configure the following dependencies on your machine:
+Before you can build this project, you must install and configure the following tools on your machine:
+1. Postgresql: geodata uses PostgreSQL for both production and development. Please refere to the offical docs for instructions how to setup PostgreSQL on your local machine.
 
-1. [Node.js][]: We use Node to run a development web server and build the project.
+2. [Node.js][]: We use Node to run a development web server and build the project.
    Depending on your system, you can install Node either from source or as a pre-packaged bundle.
+
+### 1. Database setup
+
+If you already do not have it, create a database named: **ag04**. 
+Connect to database with user that has sufficient privileges and execute:
+
+```sql
+CREATE DATABASE ag04;
+```
+
+The next step is to create **geodata** user and his corresponding schema.
+To do so execute the following sql commands:
+
+```sql
+CREATE ROLE geodata NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN PASSWORD 'geodatapwd';
+GRANT ALL PRIVILEGES ON DATABASE ag04 TO geodata;
+CREATE SCHEMA IF NOT EXISTS AUTHORIZATION "geodata";
+```
+
+### 2. Building geodata-app
 
 After installing Node, you should be able to run the following command to install development tools.
 You will only need to run this command when dependencies change in [package.json](package.json).
@@ -40,23 +61,6 @@ Add the `help` flag on any command to see how you can use it. For example, `npm 
 
 The `npm run` command will list all of the scripts available to run for this project.
 
-### Database setup
-
-If you already do not have it create database named: **ag04**. 
-Connect to database with user that has sufficient privileges and execute:
-
-```sql
-CREATE DATABASE ag04;
-```
-
-The next step is to create **geodata** user and his corresponding schema.
-To do so execute the following sql commands:
-
-```sql
-CREATE ROLE geodata NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN PASSWORD 'geodatapwd';
-GRANT ALL PRIVILEGES ON DATABASE ag04 TO geodata;
-CREATE SCHEMA IF NOT EXISTS AUTHORIZATION "geodata";
-```
 
 ### Managing dependencies
 
