@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="country">
+      <h2 data-cy="countryDetailsHeading"><span jhiTranslate="geodataApp.country.detail.title">Country</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="geodataApp.country.id">Id</span></dt>
+        <dd>
+          <span>{{ country.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="geodataApp.country.name">Name</span></dt>
+        <dd>
+          <span>{{ country.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="geodataApp.country.code">Code</span></dt>
+        <dd>
+          <span>{{ country.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="geodataApp.country.codeA2">Code A 2</span></dt>
+        <dd>
+          <span>{{ country.codeA2 }}</span>
+        </dd>
+        <dt><span jhiTranslate="geodataApp.country.codeA3">Code A 3</span></dt>
+        <dd>
+          <span>{{ country.codeA3 }}</span>
+        </dd>
+        <dt><span jhiTranslate="geodataApp.country.flag">Flag</span></dt>
+        <dd>
+          <span>{{ country.flag }}</span>
+        </dd>
+        <dt><span jhiTranslate="geodataApp.country.active">Active</span></dt>
+        <dd>
+          <span>{{ country.active }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/country', country.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
