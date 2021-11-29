@@ -2,7 +2,7 @@
   "generator-jhipster": {
     "applicationType": "monolith",
     "baseName": "geodataApp",
-    "jhipsterVersion": "7.1.0",
+    "jhipsterVersion": "7.4.0",
     "skipClient": false,
     "skipServer": false,
     "skipUserManagement": false,
@@ -44,6 +44,7 @@
     "clientPackageManager": "npm",
     "languages": ["en", "hr"],
     "entities": ["Country", "Currency"],
-    "lastLiquibaseTimestamp": 1633001439000
+    "lastLiquibaseTimestamp": 1633001439000,
+    "enableGradleEnterprise": false
   }
 }

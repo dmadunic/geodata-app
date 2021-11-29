@@ -12,102 +12,100 @@ import { ICurrency, Currency } from '../currency.model';
 
 import { CurrencyUpdateComponent } from './currency-update.component';
 
-describe('Component Tests', () => {
-  describe('Currency Management Update Component', () => {
-    let comp: CurrencyUpdateComponent;
-    let fixture: ComponentFixture<CurrencyUpdateComponent>;
-    let activatedRoute: ActivatedRoute;
-    let currencyService: CurrencyService;
+describe('Currency Management Update Component', () => {
+  let comp: CurrencyUpdateComponent;
+  let fixture: ComponentFixture<CurrencyUpdateComponent>;
+  let activatedRoute: ActivatedRoute;
+  let currencyService: CurrencyService;
 
-    beforeEach(() => {
-      TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        declarations: [CurrencyUpdateComponent],
-        providers: [FormBuilder, ActivatedRoute],
-      })
-        .overrideTemplate(CurrencyUpdateComponent, '')
-        .compileComponents();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      declarations: [CurrencyUpdateComponent],
+      providers: [FormBuilder, ActivatedRoute],
+    })
+      .overrideTemplate(CurrencyUpdateComponent, '')
+      .compileComponents();
 
-      fixture = TestBed.createComponent(CurrencyUpdateComponent);
-      activatedRoute = TestBed.inject(ActivatedRoute);
-      currencyService = TestBed.inject(CurrencyService);
+    fixture = TestBed.createComponent(CurrencyUpdateComponent);
+    activatedRoute = TestBed.inject(ActivatedRoute);
+    currencyService = TestBed.inject(CurrencyService);
 
-      comp = fixture.componentInstance;
+    comp = fixture.componentInstance;
+  });
+
+  describe('ngOnInit', () => {
+    it('Should update editForm', () => {
+      const currency: ICurrency = { id: 456 };
+
+      activatedRoute.data = of({ currency });
+      comp.ngOnInit();
+
+      expect(comp.editForm.value).toEqual(expect.objectContaining(currency));
+    });
+  });
+
+  describe('save', () => {
+    it('Should call update service on save for existing entity', () => {
+      // GIVEN
+      const saveSubject = new Subject<HttpResponse<Currency>>();
+      const currency = { id: 123 };
+      jest.spyOn(currencyService, 'update').mockReturnValue(saveSubject);
+      jest.spyOn(comp, 'previousState');
+      activatedRoute.data = of({ currency });
+      comp.ngOnInit();
+
+      // WHEN
+      comp.save();
+      expect(comp.isSaving).toEqual(true);
+      saveSubject.next(new HttpResponse({ body: currency }));
+      saveSubject.complete();
+
+      // THEN
+      expect(comp.previousState).toHaveBeenCalled();
+      expect(currencyService.update).toHaveBeenCalledWith(currency);
+      expect(comp.isSaving).toEqual(false);
     });
 
-    describe('ngOnInit', () => {
-      it('Should update editForm', () => {
-        const currency: ICurrency = { id: 456 };
+    it('Should call create service on save for new entity', () => {
+      // GIVEN
+      const saveSubject = new Subject<HttpResponse<Currency>>();
+      const currency = new Currency();
+      jest.spyOn(currencyService, 'create').mockReturnValue(saveSubject);
+      jest.spyOn(comp, 'previousState');
+      activatedRoute.data = of({ currency });
+      comp.ngOnInit();
 
-        activatedRoute.data = of({ currency });
-        comp.ngOnInit();
+      // WHEN
+      comp.save();
+      expect(comp.isSaving).toEqual(true);
+      saveSubject.next(new HttpResponse({ body: currency }));
+      saveSubject.complete();
 
-        expect(comp.editForm.value).toEqual(expect.objectContaining(currency));
-      });
+      // THEN
+      expect(currencyService.create).toHaveBeenCalledWith(currency);
+      expect(comp.isSaving).toEqual(false);
+      expect(comp.previousState).toHaveBeenCalled();
     });
 
-    describe('save', () => {
-      it('Should call update service on save for existing entity', () => {
-        // GIVEN
-        const saveSubject = new Subject<HttpResponse<Currency>>();
-        const currency = { id: 123 };
-        jest.spyOn(currencyService, 'update').mockReturnValue(saveSubject);
-        jest.spyOn(comp, 'previousState');
-        activatedRoute.data = of({ currency });
-        comp.ngOnInit();
+    it('Should set isSaving to false on error', () => {
+      // GIVEN
+      const saveSubject = new Subject<HttpResponse<Currency>>();
+      const currency = { id: 123 };
+      jest.spyOn(currencyService, 'update').mockReturnValue(saveSubject);
+      jest.spyOn(comp, 'previousState');
+      activatedRoute.data = of({ currency });
+      comp.ngOnInit();
 
-        // WHEN
-        comp.save();
-        expect(comp.isSaving).toEqual(true);
-        saveSubject.next(new HttpResponse({ body: currency }));
-        saveSubject.complete();
+      // WHEN
+      comp.save();
+      expect(comp.isSaving).toEqual(true);
+      saveSubject.error('This is an error!');
 
-        // THEN
-        expect(comp.previousState).toHaveBeenCalled();
-        expect(currencyService.update).toHaveBeenCalledWith(currency);
-        expect(comp.isSaving).toEqual(false);
-      });
-
-      it('Should call create service on save for new entity', () => {
-        // GIVEN
-        const saveSubject = new Subject<HttpResponse<Currency>>();
-        const currency = new Currency();
-        jest.spyOn(currencyService, 'create').mockReturnValue(saveSubject);
-        jest.spyOn(comp, 'previousState');
-        activatedRoute.data = of({ currency });
-        comp.ngOnInit();
-
-        // WHEN
-        comp.save();
-        expect(comp.isSaving).toEqual(true);
-        saveSubject.next(new HttpResponse({ body: currency }));
-        saveSubject.complete();
-
-        // THEN
-        expect(currencyService.create).toHaveBeenCalledWith(currency);
-        expect(comp.isSaving).toEqual(false);
-        expect(comp.previousState).toHaveBeenCalled();
-      });
-
-      it('Should set isSaving to false on error', () => {
-        // GIVEN
-        const saveSubject = new Subject<HttpResponse<Currency>>();
-        const currency = { id: 123 };
-        jest.spyOn(currencyService, 'update').mockReturnValue(saveSubject);
-        jest.spyOn(comp, 'previousState');
-        activatedRoute.data = of({ currency });
-        comp.ngOnInit();
-
-        // WHEN
-        comp.save();
-        expect(comp.isSaving).toEqual(true);
-        saveSubject.error('This is an error!');
-
-        // THEN
-        expect(currencyService.update).toHaveBeenCalledWith(currency);
-        expect(comp.isSaving).toEqual(false);
-        expect(comp.previousState).not.toHaveBeenCalled();
-      });
+      // THEN
+      expect(currencyService.update).toHaveBeenCalledWith(currency);
+      expect(comp.isSaving).toEqual(false);
+      expect(comp.previousState).not.toHaveBeenCalled();
     });
   });
 });

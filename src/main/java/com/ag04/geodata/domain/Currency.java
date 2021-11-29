@@ -19,6 +19,7 @@ public class Currency implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
+    @Column(name = "id")
     private Long id;
 
     @NotNull
@@ -40,17 +41,18 @@ public class Currency implements Serializable {
     private Boolean preferred;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public Currency id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Currency id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getName() {
@@ -58,7 +60,7 @@ public class Currency implements Serializable {
     }
 
     public Currency name(String name) {
-        this.name = name;
+        this.setName(name);
         return this;
     }
 
@@ -71,7 +73,7 @@ public class Currency implements Serializable {
     }
 
     public Currency code(String code) {
-        this.code = code;
+        this.setCode(code);
         return this;
     }
 
@@ -84,7 +86,7 @@ public class Currency implements Serializable {
     }
 
     public Currency numCode(String numCode) {
-        this.numCode = numCode;
+        this.setNumCode(numCode);
         return this;
     }
 
@@ -97,7 +99,7 @@ public class Currency implements Serializable {
     }
 
     public Currency preferred(Boolean preferred) {
-        this.preferred = preferred;
+        this.setPreferred(preferred);
         return this;
     }
 

@@ -47,30 +47,28 @@ public class CountryService {
 
         return countryRepository
             .findById(country.getId())
-            .map(
-                existingCountry -> {
-                    if (country.getName() != null) {
-                        existingCountry.setName(country.getName());
-                    }
-                    if (country.getCode() != null) {
-                        existingCountry.setCode(country.getCode());
-                    }
-                    if (country.getCodeA2() != null) {
-                        existingCountry.setCodeA2(country.getCodeA2());
-                    }
-                    if (country.getCodeA3() != null) {
-                        existingCountry.setCodeA3(country.getCodeA3());
-                    }
-                    if (country.getFlag() != null) {
-                        existingCountry.setFlag(country.getFlag());
-                    }
-                    if (country.getActive() != null) {
-                        existingCountry.setActive(country.getActive());
-                    }
-
-                    return existingCountry;
+            .map(existingCountry -> {
+                if (country.getName() != null) {
+                    existingCountry.setName(country.getName());
                 }
-            )
+                if (country.getCode() != null) {
+                    existingCountry.setCode(country.getCode());
+                }
+                if (country.getCodeA2() != null) {
+                    existingCountry.setCodeA2(country.getCodeA2());
+                }
+                if (country.getCodeA3() != null) {
+                    existingCountry.setCodeA3(country.getCodeA3());
+                }
+                if (country.getFlag() != null) {
+                    existingCountry.setFlag(country.getFlag());
+                }
+                if (country.getActive() != null) {
+                    existingCountry.setActive(country.getActive());
+                }
+
+                return existingCountry;
+            })
             .map(countryRepository::save);
     }
 

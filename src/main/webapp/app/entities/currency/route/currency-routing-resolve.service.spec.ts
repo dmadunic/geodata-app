@@ -11,72 +11,70 @@ import { CurrencyService } from '../service/currency.service';
 
 import { CurrencyRoutingResolveService } from './currency-routing-resolve.service';
 
-describe('Service Tests', () => {
-  describe('Currency routing resolve service', () => {
-    let mockRouter: Router;
-    let mockActivatedRouteSnapshot: ActivatedRouteSnapshot;
-    let routingResolveService: CurrencyRoutingResolveService;
-    let service: CurrencyService;
-    let resultCurrency: ICurrency | undefined;
+describe('Currency routing resolve service', () => {
+  let mockRouter: Router;
+  let mockActivatedRouteSnapshot: ActivatedRouteSnapshot;
+  let routingResolveService: CurrencyRoutingResolveService;
+  let service: CurrencyService;
+  let resultCurrency: ICurrency | undefined;
 
-    beforeEach(() => {
-      TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [Router, ActivatedRouteSnapshot],
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [Router, ActivatedRouteSnapshot],
+    });
+    mockRouter = TestBed.inject(Router);
+    mockActivatedRouteSnapshot = TestBed.inject(ActivatedRouteSnapshot);
+    routingResolveService = TestBed.inject(CurrencyRoutingResolveService);
+    service = TestBed.inject(CurrencyService);
+    resultCurrency = undefined;
+  });
+
+  describe('resolve', () => {
+    it('should return ICurrency returned by find', () => {
+      // GIVEN
+      service.find = jest.fn(id => of(new HttpResponse({ body: { id } })));
+      mockActivatedRouteSnapshot.params = { id: 123 };
+
+      // WHEN
+      routingResolveService.resolve(mockActivatedRouteSnapshot).subscribe(result => {
+        resultCurrency = result;
       });
-      mockRouter = TestBed.inject(Router);
-      mockActivatedRouteSnapshot = TestBed.inject(ActivatedRouteSnapshot);
-      routingResolveService = TestBed.inject(CurrencyRoutingResolveService);
-      service = TestBed.inject(CurrencyService);
-      resultCurrency = undefined;
+
+      // THEN
+      expect(service.find).toBeCalledWith(123);
+      expect(resultCurrency).toEqual({ id: 123 });
     });
 
-    describe('resolve', () => {
-      it('should return ICurrency returned by find', () => {
-        // GIVEN
-        service.find = jest.fn(id => of(new HttpResponse({ body: { id } })));
-        mockActivatedRouteSnapshot.params = { id: 123 };
+    it('should return new ICurrency if id is not provided', () => {
+      // GIVEN
+      service.find = jest.fn();
+      mockActivatedRouteSnapshot.params = {};
 
-        // WHEN
-        routingResolveService.resolve(mockActivatedRouteSnapshot).subscribe(result => {
-          resultCurrency = result;
-        });
-
-        // THEN
-        expect(service.find).toBeCalledWith(123);
-        expect(resultCurrency).toEqual({ id: 123 });
+      // WHEN
+      routingResolveService.resolve(mockActivatedRouteSnapshot).subscribe(result => {
+        resultCurrency = result;
       });
 
-      it('should return new ICurrency if id is not provided', () => {
-        // GIVEN
-        service.find = jest.fn();
-        mockActivatedRouteSnapshot.params = {};
+      // THEN
+      expect(service.find).not.toBeCalled();
+      expect(resultCurrency).toEqual(new Currency());
+    });
 
-        // WHEN
-        routingResolveService.resolve(mockActivatedRouteSnapshot).subscribe(result => {
-          resultCurrency = result;
-        });
+    it('should route to 404 page if data not found in server', () => {
+      // GIVEN
+      jest.spyOn(service, 'find').mockReturnValue(of(new HttpResponse({ body: null as unknown as Currency })));
+      mockActivatedRouteSnapshot.params = { id: 123 };
 
-        // THEN
-        expect(service.find).not.toBeCalled();
-        expect(resultCurrency).toEqual(new Currency());
+      // WHEN
+      routingResolveService.resolve(mockActivatedRouteSnapshot).subscribe(result => {
+        resultCurrency = result;
       });
 
-      it('should route to 404 page if data not found in server', () => {
-        // GIVEN
-        jest.spyOn(service, 'find').mockReturnValue(of(new HttpResponse({ body: null as unknown as Currency })));
-        mockActivatedRouteSnapshot.params = { id: 123 };
-
-        // WHEN
-        routingResolveService.resolve(mockActivatedRouteSnapshot).subscribe(result => {
-          resultCurrency = result;
-        });
-
-        // THEN
-        expect(service.find).toBeCalledWith(123);
-        expect(resultCurrency).toEqual(undefined);
-        expect(mockRouter.navigate).toHaveBeenCalledWith(['404']);
-      });
+      // THEN
+      expect(service.find).toBeCalledWith(123);
+      expect(resultCurrency).toEqual(undefined);
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['404']);
     });
   });
 });

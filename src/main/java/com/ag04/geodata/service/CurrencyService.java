@@ -47,24 +47,22 @@ public class CurrencyService {
 
         return currencyRepository
             .findById(currency.getId())
-            .map(
-                existingCurrency -> {
-                    if (currency.getName() != null) {
-                        existingCurrency.setName(currency.getName());
-                    }
-                    if (currency.getCode() != null) {
-                        existingCurrency.setCode(currency.getCode());
-                    }
-                    if (currency.getNumCode() != null) {
-                        existingCurrency.setNumCode(currency.getNumCode());
-                    }
-                    if (currency.getPreferred() != null) {
-                        existingCurrency.setPreferred(currency.getPreferred());
-                    }
-
-                    return existingCurrency;
+            .map(existingCurrency -> {
+                if (currency.getName() != null) {
+                    existingCurrency.setName(currency.getName());
                 }
-            )
+                if (currency.getCode() != null) {
+                    existingCurrency.setCode(currency.getCode());
+                }
+                if (currency.getNumCode() != null) {
+                    existingCurrency.setNumCode(currency.getNumCode());
+                }
+                if (currency.getPreferred() != null) {
+                    existingCurrency.setPreferred(currency.getPreferred());
+                }
+
+                return existingCurrency;
+            })
             .map(currencyRepository::save);
     }
 

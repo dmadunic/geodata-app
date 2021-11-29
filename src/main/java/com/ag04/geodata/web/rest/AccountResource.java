@@ -7,7 +7,6 @@ import com.ag04.geodata.service.MailService;
 import com.ag04.geodata.service.UserService;
 import com.ag04.geodata.service.dto.AdminUserDTO;
 import com.ag04.geodata.service.dto.PasswordChangeDTO;
-import com.ag04.geodata.service.dto.UserDTO;
 import com.ag04.geodata.web.rest.errors.*;
 import com.ag04.geodata.web.rest.vm.KeyAndPasswordVM;
 import com.ag04.geodata.web.rest.vm.ManagedUserVM;
