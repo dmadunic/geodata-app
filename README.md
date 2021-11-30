@@ -1,4 +1,5 @@
 # Geodata App
+
 ![GeoData CI/CD](https://github.com/dmadunic/geodata-app/actions/workflows/main-cicd.yml/badge.svg?branch=master)
 ![](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white&style=flat)
 ![](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white&style=flat)
@@ -8,11 +9,12 @@
 
 Jhipster demo application based on Spring Boot and Angular. Applicaiton provides access to data for countries and currencies.
 
-This application was generated using JHipster 7.1.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.1.0](https://www.jhipster.tech/documentation-archive/v7.1.0).
+This application was generated using JHipster 7.4.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.4.0](https://www.jhipster.tech/documentation-archive/v7.4.0).
 
 ## Development
 
 Before you can build this project, you must install and configure the following tools on your machine:
+
 1. Postgresql: geodata uses PostgreSQL for both production and development. Please refere to the offical docs for instructions how to setup PostgreSQL on your local machine.
 
 2. [Node.js][]: We use Node to run a development web server and build the project.
@@ -20,7 +22,7 @@ Before you can build this project, you must install and configure the following 
 
 ### 1. Database setup
 
-If you already do not have it, create a database named: **ag04**. 
+If you already do not have it, create a database named: **ag04**.
 Connect to database with user that has sufficient privileges and execute:
 
 ```sql
@@ -33,6 +35,11 @@ To do so execute the following sql commands:
 ```sql
 CREATE ROLE geodata NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN PASSWORD 'geodatapwd';
 GRANT ALL PRIVILEGES ON DATABASE ag04 TO geodata;
+```
+
+Disconnect from "default" database, and connect to ag04 database using the same user as in the previous steps.
+
+```sql
 CREATE SCHEMA IF NOT EXISTS AUTHORIZATION "geodata";
 ```
 
@@ -60,7 +67,6 @@ specifying a newer version in [package.json](package.json). You can also run `np
 Add the `help` flag on any command to see how you can use it. For example, `npm help update`.
 
 The `npm run` command will list all of the scripts available to run for this project.
-
 
 ### Managing dependencies
 
@@ -109,6 +115,14 @@ will generate few files:
 create src/main/webapp/app/my-component/my-component.component.html
 create src/main/webapp/app/my-component/my-component.component.ts
 update src/main/webapp/app/app.module.ts
+```
+
+### JHipster Control Center
+
+JHipster Control Center can help you manage and control your application(s). You can start a local control center server (accessible on http://localhost:7419) with:
+
+```
+docker-compose -f src/main/docker/jhipster-control-center.yml up
 ```
 
 ## Building for production
@@ -204,7 +218,6 @@ To achieve this, first build a docker image of your app by running:
 **If -P-PimageVersion parameter is ommited image with version equal to project version will be built.**
 See gradle/docker.gradle file for other docker image build options.
 
-
 Then run:
 
 ```
@@ -218,18 +231,18 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
 [jhipster homepage and latest documentation]: https://www.jhipster.tech
-[jhipster 7.1.0 archive]: https://www.jhipster.tech/documentation-archive/v7.1.0
-[using jhipster in development]: https://www.jhipster.tech/documentation-archive/v7.1.0/development/
-[using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v7.1.0/docker-compose
-[using jhipster in production]: https://www.jhipster.tech/documentation-archive/v7.1.0/production/
-[running tests page]: https://www.jhipster.tech/documentation-archive/v7.1.0/running-tests/
-[code quality page]: https://www.jhipster.tech/documentation-archive/v7.1.0/code-quality/
-[setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v7.1.0/setting-up-ci/
+[jhipster 7.4.0 archive]: https://www.jhipster.tech/documentation-archive/v7.4.0
+[using jhipster in development]: https://www.jhipster.tech/documentation-archive/v7.4.0/development/
+[using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v7.4.0/docker-compose
+[using jhipster in production]: https://www.jhipster.tech/documentation-archive/v7.4.0/production/
+[running tests page]: https://www.jhipster.tech/documentation-archive/v7.4.0/running-tests/
+[code quality page]: https://www.jhipster.tech/documentation-archive/v7.4.0/code-quality/
+[setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v7.4.0/setting-up-ci/
 [node.js]: https://nodejs.org/
+[npm]: https://www.npmjs.com/
 [webpack]: https://webpack.github.io/
-[angular cli]: https://cli.angular.io/
 [browsersync]: https://www.browsersync.io/
 [jest]: https://facebook.github.io/jest/
-[jasmine]: https://jasmine.github.io/2.0/introduction.html
 [leaflet]: https://leafletjs.com/
 [definitelytyped]: https://definitelytyped.org/
+[angular cli]: https://cli.angular.io/

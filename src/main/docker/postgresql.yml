@@ -2,7 +2,7 @@
 version: '3.8'
 services:
   geodataapp-postgresql:
-    image: postgres:13.3
+    image: postgres:13.5
     # volumes:
     #   - ~/volumes/jhipster/geodataApp/postgresql/:/var/lib/postgresql/data/
     environment:

@@ -31,7 +31,7 @@
   <div class="table-responsive" id="entities" *ngIf="countries && countries.length > 0">
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
-        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
           <th scope="col" jhiSortBy="id"><span jhiTranslate="geodataApp.country.id">Id</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="name"><span jhiTranslate="geodataApp.country.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="code"><span jhiTranslate="geodataApp.country.code">Code</span> <fa-icon icon="sort"></fa-icon></th>
@@ -57,7 +57,7 @@
           <td>{{ country.code }}</td>
           <td>{{ country.codeA2 }}</td>
           <td>{{ country.codeA3 }}</td>
-          <td><img *ngIf="country.flag" src="{{'../content/images/flags/' + country.flag }}" width="40" /></td>
+          <td><img *ngIf="country.flag" src="{{ '../content/images/flags/' + country.flag }}" width="40" /></td>
           <td>{{ country.active }}</td>
           <td class="text-right">
             <div class="btn-group">

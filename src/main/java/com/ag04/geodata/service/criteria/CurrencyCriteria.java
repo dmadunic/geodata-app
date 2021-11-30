@@ -34,6 +34,8 @@ public class CurrencyCriteria implements Serializable, Criteria {
 
     private BooleanFilter preferred;
 
+    private Boolean distinct;
+
     public CurrencyCriteria() {}
 
     public CurrencyCriteria(CurrencyCriteria other) {
@@ -42,6 +44,7 @@ public class CurrencyCriteria implements Serializable, Criteria {
         this.code = other.code == null ? null : other.code.copy();
         this.numCode = other.numCode == null ? null : other.numCode.copy();
         this.preferred = other.preferred == null ? null : other.preferred.copy();
+        this.distinct = other.distinct;
     }
 
     @Override
@@ -124,6 +127,14 @@ public class CurrencyCriteria implements Serializable, Criteria {
         this.preferred = preferred;
     }
 
+    public Boolean getDistinct() {
+        return distinct;
+    }
+
+    public void setDistinct(Boolean distinct) {
+        this.distinct = distinct;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -138,13 +149,14 @@ public class CurrencyCriteria implements Serializable, Criteria {
             Objects.equals(name, that.name) &&
             Objects.equals(code, that.code) &&
             Objects.equals(numCode, that.numCode) &&
-            Objects.equals(preferred, that.preferred)
+            Objects.equals(preferred, that.preferred) &&
+            Objects.equals(distinct, that.distinct)
         );
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, code, numCode, preferred);
+        return Objects.hash(id, name, code, numCode, preferred, distinct);
     }
 
     // prettier-ignore
@@ -156,6 +168,7 @@ public class CurrencyCriteria implements Serializable, Criteria {
             (code != null ? "code=" + code + ", " : "") +
             (numCode != null ? "numCode=" + numCode + ", " : "") +
             (preferred != null ? "preferred=" + preferred + ", " : "") +
+            (distinct != null ? "distinct=" + distinct + ", " : "") +
             "}";
     }
 }

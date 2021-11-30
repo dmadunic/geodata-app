@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TIMESTAMP } from 'app/app.constants';
 import * as dayjs from 'dayjs';
 
 @Component({
@@ -7,9 +6,9 @@ import * as dayjs from 'dayjs';
   templateUrl: './footer.component.html',
 })
 export class FooterComponent {
-  buildTime: Date;
+  //buildTime: Date;
 
   constructor() {
-    this.buildTime = dayjs(TIMESTAMP).toDate();
+    //this.buildTime = dayjs(TIMESTAMP).toDate();
   }
 }

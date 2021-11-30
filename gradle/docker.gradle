@@ -16,7 +16,7 @@ if (project.hasProperty("dockerRegistryUrl")) {
 
 jib {
     from {
-        image = "adoptopenjdk:11-jre-hotspot"
+        image = "eclipse-temurin:11-jre-focal"
     }
     to {
         image = "${dockerRegistryUrl}${imageName}:${imageVersion}"

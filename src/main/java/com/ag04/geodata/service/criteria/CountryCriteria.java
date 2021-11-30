@@ -38,6 +38,8 @@ public class CountryCriteria implements Serializable, Criteria {
 
     private BooleanFilter active;
 
+    private Boolean distinct;
+
     public CountryCriteria() {}
 
     public CountryCriteria(CountryCriteria other) {
@@ -48,6 +50,7 @@ public class CountryCriteria implements Serializable, Criteria {
         this.codeA3 = other.codeA3 == null ? null : other.codeA3.copy();
         this.flag = other.flag == null ? null : other.flag.copy();
         this.active = other.active == null ? null : other.active.copy();
+        this.distinct = other.distinct;
     }
 
     @Override
@@ -160,6 +163,14 @@ public class CountryCriteria implements Serializable, Criteria {
         this.active = active;
     }
 
+    public Boolean getDistinct() {
+        return distinct;
+    }
+
+    public void setDistinct(Boolean distinct) {
+        this.distinct = distinct;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -176,13 +187,14 @@ public class CountryCriteria implements Serializable, Criteria {
             Objects.equals(codeA2, that.codeA2) &&
             Objects.equals(codeA3, that.codeA3) &&
             Objects.equals(flag, that.flag) &&
-            Objects.equals(active, that.active)
+            Objects.equals(active, that.active) &&
+            Objects.equals(distinct, that.distinct)
         );
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, code, codeA2, codeA3, flag, active);
+        return Objects.hash(id, name, code, codeA2, codeA3, flag, active, distinct);
     }
 
     // prettier-ignore
@@ -196,6 +208,7 @@ public class CountryCriteria implements Serializable, Criteria {
             (codeA3 != null ? "codeA3=" + codeA3 + ", " : "") +
             (flag != null ? "flag=" + flag + ", " : "") +
             (active != null ? "active=" + active + ", " : "") +
+            (distinct != null ? "distinct=" + distinct + ", " : "") +
             "}";
     }
 }
