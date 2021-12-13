@@ -9,7 +9,7 @@ data:
   geodata_db_user: "geodata"
   db_schema: "geodata"
   liquibase_contexts: "dev"
-  app_base_url: ""
+  app_base_url: "https://workshop.ag04.io/geodata/"
   mail_host: "localhost"
   mail_username: ""
   mail_port: ""

@@ -22,7 +22,7 @@ spec:
         deploy: geodata-app-pod
     spec:
       nodeSelector:
-        cloud.google.com/gke-nodepool: e2-medium-pool
+        cloud.google.com/gke-nodepool: default-pool
       containers:
         - name: geodata-app
           image: ag04/geodata-app:latest
@@ -30,6 +30,8 @@ spec:
           env:
           - name: _JAVA_OPTIONS
             value: "-Xmx768m -Xms384m"
+          - name: "SERVER_SERVLET_CONTEXT_PATH"
+            value: "/geodata"
           - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
             value: "true"
           - name: JHIPSTER_SLEEP
@@ -102,14 +104,14 @@ spec:
               cpu: '1'
           readinessProbe:
             httpGet:
-              path: /management/health
+              path: /geodata/management/health
               port: http
             initialDelaySeconds: 60
             periodSeconds: 10
             failureThreshold: 6
           livenessProbe:
             httpGet:
-              path: /management/health
+              path: /geodata/management/health
               port: http
             initialDelaySeconds: 120
             periodSeconds: 10
