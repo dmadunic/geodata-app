@@ -67,16 +67,10 @@ jobs:
             - name: Run frontend test
               id: frontend-tests
               run: npm run test
-    # Build the Docker image (projectVersion)
-    - name: Build docker image (projectVersion)
-      if: (github.event.inputs.buildDockerImage == 'yes') && (github.event.inputs.version == 'project')
-      run: |-
-        ./gradlew jib -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=eu.gcr.io
-    # Build the Docker image (latest)
-    - name: Build docker image (latest)
-      if: (github.event.inputs.buildDockerImage == 'yes') && (github.event.inputs.version == 'latest')
-      run: |-
-        ./gradlew jib -PimageVersion=latest -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=eu.gcr.io
+            # Build the Docker image (latest)
+            - name: Build docker image (latest)
+              run: |-
+                ./gradlew jib -PimageVersion=latest -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=eu.gcr.io
             #- name: Package application
             #  id: package-app
             #  if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
