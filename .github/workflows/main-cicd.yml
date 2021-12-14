@@ -37,7 +37,7 @@ jobs:
             SPRING_OUTPUT_ANSI_ENABLED: DETECT
             SPRING_JPA_SHOW_SQL: false
             JHI_DISABLE_WEBPACK_LOGS: true
-            IMAGE_NAME: docker-registry-main/geodata-app
+            IMAGE_NAME: geodata-app
             DEPLOYMENT_NAME: geodata-app-deployment
             #KUBE_SERVER: https://740e865b-b00f-4e42-970f-67c87c1c634d.k8s.ondigitalocean.com
         steps:
@@ -55,7 +55,7 @@ jobs:
                 project_id: 'ag04-inventory'
             # Configure Docker to use the gcloud command-line tool as a credential helper for authentication
             - run: |-
-                gcloud --quiet auth configure-docker eu.gcr.io
+                gcloud --quiet auth configure-docker europe-west3-docker.pkg.dev 
             - name: Install node.js packages
               id: install-node-js
               run: npm install
@@ -70,7 +70,7 @@ jobs:
             # Build the Docker image (latest)
             - name: Build docker image (latest)
               run: |-
-                ./gradlew jib -PimageVersion=latest -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=eu.gcr.io/ag04-inventory
+                ./gradlew jib -PimageVersion=latest -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=europe-west3-docker.pkg.dev/ag04-inventory/docker-registry-main
             #- name: Package application
             #  id: package-app
             #  if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
