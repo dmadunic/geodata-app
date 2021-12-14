@@ -58,15 +58,18 @@ jobs:
             - name: Run frontend test
               id: frontend-tests
               run: npm run test
-            - name: Package application
-              id: package-app
-              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
-              run: ./gradlew bootJar -Pprod -x test -x integrationTest
+            #- name: Package application
+            #  id: package-app
+            #  if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
+            #  run: ./gradlew bootJar -Pprod -x test -x integrationTest
             - name: Build and publish docker image (latest)
               id: docker-build-push-latest
               if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
               run: |
                   ./gradlew jib -PimageVersion=latest -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
+            - name: Tagg check
+              if: startsWith(github.ref, 'refs/tags/')
+              run: echo "Detected tag ${{ github.ref }}"
             - name: Build and publish docker image (release)
               id: docker-build-push-release
               if: (github.event_name == 'push' || github.event.pull_request.merged == 'true') && startsWith(github.ref, 'refs/tags/')

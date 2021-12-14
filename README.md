@@ -7,7 +7,7 @@
 ![](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white&style=flat)
 ![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&style=flat)
 
-Jhipster demo application based on Spring Boot and Angular. Applicaiton provides access to data for countries and currencies.
+Jhipster generated monolith application based on Spring Boot and Angular of demo **GeodataApp**. Applicaiton provides access to data for countries and currencies.
 
 This application was generated using JHipster 7.4.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.4.0](https://www.jhipster.tech/documentation-archive/v7.4.0).
 
