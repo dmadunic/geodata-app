@@ -103,10 +103,10 @@ jobs:
       if: github.event.inputs.targetOp == 'redeploy' 
       run: |-
         kubectl rollout restart deployment/$DEPLOYMENT_NAME --namespace=geodata
-        kubectl get deployments -o wide -n tfc
+        kubectl get deployments -o wide -n geodata
     # Deploy new version to target GKE cluster
     - name: Deply new version
       if: github.event.inputs.targetOp == 'deploy_new'
       run: |-
         kubectl set image deployment/$DEPLOYMENT_NAME --namespace=geodata $CONTAINER_NAME=$GAR_LOCATION/$GAR_PROJECT_ID/$DOCKER_REGISTRY_NAME/$IMAGE_NAME:${{ steps.setVersion.outputs.targetVersion }}
-        kubectl get deployments -o wide -n tfc
+        kubectl get deployments -o wide -n geodata
