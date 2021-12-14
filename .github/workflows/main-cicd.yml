@@ -31,22 +31,31 @@ jobs:
         name: CI/CD pipeline
         runs-on: ubuntu-latest
         if: "!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.pull_request.title, '[skip ci]') && !contains(github.event.pull_request.title, '[ci skip]')"
-        timeout-minutes: 40
+        timeout-minutes: 20
         env:
-            NODE_VERSION: 12.16.1
+            NODE_VERSION: 16.13.0
             SPRING_OUTPUT_ANSI_ENABLED: DETECT
             SPRING_JPA_SHOW_SQL: false
             JHI_DISABLE_WEBPACK_LOGS: true
+            IMAGE_NAME: ag04-inventory/geodata-app
             DEPLOYMENT_NAME: geodata-app-deployment
             #KUBE_SERVER: https://740e865b-b00f-4e42-970f-67c87c1c634d.k8s.ondigitalocean.com
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v1
               with:
-                  node-version: 12.16.1
+                  node-version: 16.13.0
             - uses: actions/setup-java@v1
               with:
                   java-version: '11.x'
+            # Setup gcloud CLI (TFC GCR project)
+            - uses: google-github-actions/setup-gcloud@v0.2.0
+              with:
+                service_account_key: ${{ secrets.GAR_SA_KEY }}
+                project_id: 'ag04-inventory'
+            # Configure Docker to use the gcloud command-line tool as a credential helper for authentication
+            - run: |-
+                gcloud --quiet auth configure-docker
             - name: Install node.js packages
               id: install-node-js
               run: npm install
@@ -58,23 +67,33 @@ jobs:
             - name: Run frontend test
               id: frontend-tests
               run: npm run test
+    # Build the Docker image (projectVersion)
+    - name: Build docker image (projectVersion)
+      if: (github.event.inputs.buildDockerImage == 'yes') && (github.event.inputs.version == 'project')
+      run: |-
+        ./gradlew jib -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=eu.gcr.io
+    # Build the Docker image (latest)
+    - name: Build docker image (latest)
+      if: (github.event.inputs.buildDockerImage == 'yes') && (github.event.inputs.version == 'latest')
+      run: |-
+        ./gradlew jib -PimageVersion=latest -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=eu.gcr.io
             #- name: Package application
             #  id: package-app
             #  if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
             #  run: ./gradlew bootJar -Pprod -x test -x integrationTest
-            - name: Build and publish docker image (latest)
-              id: docker-build-push-latest
-              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
-              run: |
-                  ./gradlew jib -PimageVersion=latest -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
-            - name: Tagg check
-              if: startsWith(github.ref, 'refs/tags/')
-              run: echo "Detected tag ${{ github.ref }}"
-            - name: Build and publish docker image (release)
-              id: docker-build-push-release
-              if: (github.event_name == 'push' || github.event.pull_request.merged == 'true') && startsWith(github.ref, 'refs/tags/')
-              run: |
-                  ./gradlew jib -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
+            #- name: Build and publish docker image (latest)
+            #  id: docker-build-push-latest
+            #  if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
+            #  run: |
+            #      ./gradlew jib -PimageVersion=latest -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
+            #- name: Tagg check
+            #  if: startsWith(github.ref, 'refs/tags/')
+            #  run: echo "Detected tag ${{ github.ref }}"
+            #- name: Build and publish docker image (release)
+            #  id: docker-build-push-release
+            #  if: (github.event_name == 'push' || github.event.pull_request.merged == 'true') && startsWith(github.ref, 'refs/tags/')
+            #  run: |
+            #      ./gradlew jib -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
 #            - name: Install kubectl
 #              id: install-kubectl
 #              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
