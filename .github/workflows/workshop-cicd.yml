@@ -20,7 +20,7 @@ env:
   DOCKER_REGISTRY_NAME: docker-registry-main
   IMAGE_NAME: geodata-app
   GKE_PROJECT_ID: ag04-workshop
-  GKE_ZONE: europe-west3
+  GKE_ZONE: europe-west3-a
   GKE_CLUSTER: workshop-gke-main
   DEPLOYMENT_NAME: geodata-app-deployment
   CONTAINER_NAME: geodata-app
