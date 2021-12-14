@@ -1,14 +1,12 @@
 #==============================================================================
 # CI/CD github pipline script: 
-#   - build
-#   - publish docker image to DockerHub
-#   - redeploy latest image to k8s cluster
+#   - run frontend tests
+#   - run backend tests
+#   - build and publish docker image to DockerHub
 #
 # This script to work requires the following secrets to be defined:
 # - DOCKER_USERNAME : 
 # - DOCKER_PASSWORD : 
-# - KUBE_SERVER
-# - KUBE_TOKEN
 #
 # (c) Agency04 / Domagoj Madunić
 #==============================================================================
@@ -37,7 +35,6 @@ jobs:
             SPRING_OUTPUT_ANSI_ENABLED: DETECT
             SPRING_JPA_SHOW_SQL: false
             JHI_DISABLE_WEBPACK_LOGS: true
-            IMAGE_NAME: geodata-app
             DEPLOYMENT_NAME: geodata-app-deployment
             #KUBE_SERVER: https://740e865b-b00f-4e42-970f-67c87c1c634d.k8s.ondigitalocean.com
         steps:
@@ -48,14 +45,6 @@ jobs:
             - uses: actions/setup-java@v1
               with:
                   java-version: '11.x'
-            # Setup gcloud CLI (TFC GCR project)
-            - uses: google-github-actions/setup-gcloud@v0.2.0
-              with:
-                service_account_key: ${{ secrets.GAR_SA_KEY }}
-                project_id: 'ag04-inventory'
-            # Configure Docker to use the gcloud command-line tool as a credential helper for authentication
-            - run: |-
-                gcloud --quiet auth configure-docker europe-west3-docker.pkg.dev 
             - name: Install node.js packages
               id: install-node-js
               run: npm install
@@ -67,35 +56,17 @@ jobs:
             - name: Run frontend test
               id: frontend-tests
               run: npm run test
-            # Build the Docker image (latest)
-            - name: Build docker image (latest)
-              run: |-
-                ./gradlew jib -PimageVersion=latest -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=europe-west3-docker.pkg.dev/ag04-inventory/docker-registry-main
-            #- name: Package application
-            #  id: package-app
-            #  if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
-            #  run: ./gradlew bootJar -Pprod -x test -x integrationTest
-            #- name: Build and publish docker image (latest)
-            #  id: docker-build-push-latest
-            #  if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
-            #  run: |
-            #      ./gradlew jib -PimageVersion=latest -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
-            #- name: Tagg check
-            #  if: startsWith(github.ref, 'refs/tags/')
-            #  run: echo "Detected tag ${{ github.ref }}"
-            #- name: Build and publish docker image (release)
-            #  id: docker-build-push-release
-            #  if: (github.event_name == 'push' || github.event.pull_request.merged == 'true') && startsWith(github.ref, 'refs/tags/')
-            #  run: |
-            #      ./gradlew jib -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
-#            - name: Install kubectl
-#              id: install-kubectl
-#              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
-#              run: |
-#                  sudo apt-get install kubectl
-#            - name: Deploy to (dev) k8s cluster
-#              id: deploy-k8s-cluster-dev
-#              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
-#              run: |
-#                  kubectl rollout restart deployment $DEPLOYMENT_NAME --insecure-skip-tls-verify=true --server=$KUBE_SERVER --token="${{ secrets.KUBE_TOKEN }}"
+            - name: Build and publish docker image (latest)
+              id: docker-build-push-latest
+              if: github.event_name == 'push' || github.event.pull_request.merged == 'true'
+              run: |
+                  ./gradlew jib -PimageVersion=latest -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
+            - name: Tagg check
+              if: startsWith(github.ref, 'refs/tags/')
+              run: echo "Detected tag ${{ github.ref }}"
+            - name: Build and publish docker image (release)
+              id: docker-build-push-release
+              if: (github.event_name == 'push' || github.event.pull_request.merged == 'true') && startsWith(github.ref, 'refs/tags/')
+              run: |
+                  ./gradlew jib -Djib.to.auth.username="${{ secrets.DOCKER_USERNAME }}" -Djib.to.auth.password="${{ secrets.DOCKER_PASSWORD }}" -Pprod
       

@@ -1,0 +1,112 @@
+name: GKE staging | Deploy/Build target version
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Target version for the operation(s) (project/latest*)'
+        required: true
+        default: 'latest'
+      buildDockerImage:
+        description: 'Build docker image (yes/no*)'
+        required: true
+        default: 'no'
+      targetOp:
+        description: 'Target build operation (none/redeploy/deploy_new)'     
+        required: true
+        default: 'none'
+env:
+  GAR_PROJECT_ID: ag04-inventory
+  GAR_LOCATION: europe-west3-docker.pkg.dev
+  DOCKER_REGISTRY_NAME: docker-registry-main
+  IMAGE_NAME: geodata-app
+  GKE_PROJECT_ID: ag04-workshop
+  GKE_ZONE: europe-west3
+  GKE_CLUSTER: workshop-gke-main
+  DEPLOYMENT_NAME: geodata-app-deployment
+  CONTAINER_NAME: geodata-app
+jobs:
+  validation:
+    name: "Gradle Wrapper Validation"
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+        - uses: gradle/wrapper-validation-action@v1
+  pipeline:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      NODE_VERSION: 16.13.0
+      SPRING_OUTPUT_ANSI_ENABLED: DETECT
+      SPRING_JPA_SHOW_SQL: false
+      JHI_DISABLE_WEBPACK_LOGS: true
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16.13.0
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '11.x'
+    - name: Install node.js packages
+      id: install-node-js
+      run: npm install
+    - name: Init project version
+      uses: HardNorth/github-version-generate@v1.1.1
+      with:
+        version-source: file
+        version-file: gradle.properties
+        version-file-extraction-pattern: '(?<=version=).+'
+    - name: Set targetOpVersion
+      id: setVersion
+      run: |
+        if [[ "${{ github.event.inputs.version }}" == "project" ]]; then
+          echo "::set-output name=targetVersion::${{ env.CURRENT_VERSION }}"
+        fi
+        if [[ "${{ github.event.inputs.version }}" == "latest" ]]; then
+          echo "::set-output name=targetVersion::latest"
+        fi
+    # Setup gcloud CLI (Google Artifact Registry project)
+    - uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        service_account_key: ${{ secrets.GAR_SA_KEY }}
+        project_id: ${{ env.GAR_PROJECT_ID }}
+    # Configure Docker to use the gcloud command-line tool as a credential helper for authentication
+    - run: |-
+        gcloud --quiet auth configure-docker $GAR_LOCATION
+    # Build the Docker image (projectVersion)
+    - name: Build docker image (projectVersion)
+      if: (github.event.inputs.buildDockerImage == 'yes') && (github.event.inputs.version == 'project')
+      run: |-
+        ./gradlew jib -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=$GAR_LOCATION/$GAR_PROJECT_ID/$DOCKER_REGISTRY_NAME
+    # Build the Docker image (latest)
+    - name: Build docker image (latest)
+      if: (github.event.inputs.buildDockerImage == 'yes') && (github.event.inputs.version == 'latest')
+      run: |-
+        ./gradlew jib -PimageVersion=latest -Pprod -PimageName=$IMAGE_NAME -PdockerRegistryUrl=$GAR_LOCATION/$GAR_PROJECT_ID/$DOCKER_REGISTRY_NAME
+    
+    # Setup gcloud CLI
+    - uses: google-github-actions/setup-gcloud@v0.2.0
+      with:
+        service_account_key: ${{ secrets.GKE_SA_KEY }}
+        project_id: ${{ env.GKE_PROJECT_ID }}
+    # Get the target GKE credentials so we can deploy to the cluster
+    - uses: google-github-actions/get-gke-credentials@v0.2.1
+      with:
+        cluster_name: ${{ env.GKE_CLUSTER }}
+        location: ${{ env.GKE_ZONE }}
+        credentials: ${{ secrets.GKE_SA_KEY }}
+
+    # Reeploy existing Docker image to target GKE cluster
+    - name: Update existing version
+      if: github.event.inputs.targetOp == 'redeploy' 
+      run: |-
+        kubectl rollout restart deployment/$DEPLOYMENT_NAME --namespace=geodata
+        kubectl get deployments -o wide -n tfc
+    # Deploy new version to target GKE cluster
+    - name: Deply new version
+      if: github.event.inputs.targetOp == 'deploy_new'
+      run: |-
+        kubectl set image deployment/$DEPLOYMENT_NAME --namespace=geodata $CONTAINER_NAME=$GAR_LOCATION/$GAR_PROJECT_ID/$DOCKER_REGISTRY_NAME/$IMAGE_NAME:${{ steps.setVersion.outputs.targetVersion }}
+        kubectl get deployments -o wide -n tfc
